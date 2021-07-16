@@ -1,7 +1,8 @@
 // target search button
 let $searchBtn = document.getElementById("searchBtn");
 // add event listener to button
-$searchBtn.addEventListener("click", async function(){
+$searchBtn.addEventListener("click", async function(event){
+  event.preventDefault();
   // when clicked, make an API call to the PokeAPI - "pokemon" endpoint
   // get the response...
   let response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");

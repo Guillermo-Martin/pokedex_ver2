@@ -9,7 +9,14 @@
 <body>
   <h1>Pokedex</h1>
 
-  <button id="searchBtn">Search Pokemon</button>
+  <form>
+    <label for="searchInput">Enter a Pokemon or the Pokemon's Number</label>
+    <input type="text" name="searchInput">
+    <!-- <button id="searchBtn">Search Pokemon</button> -->
+    <input type="submit" value="Search for a Pokemon" id="searchBtn">
+  </form>
+
+  
 
   <!-- Display pokemon data below -->
   <div id="displayDiv">
@@ -24,11 +31,3 @@
   <script src="./assets/js/script.js"></script>
 </body>
 </html>
-
-
-<!-- <ul>
-  
-  <li>Type</li>
-  <li>Height</li>
-  <li>Weight</li>
-</ul> -->
