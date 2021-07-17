@@ -3,9 +3,17 @@ let $searchBtn = document.getElementById("searchBtn");
 // add event listener to button
 $searchBtn.addEventListener("click", async function(event){
   event.preventDefault();
+
+  // 1.  get the value of the input
+  // target searchInput
+  let $searchInput = document.getElementById("searchInput");
+  // 2.  convert the string to all lowercase, save to variable, add to url
+  let searchPokemon = $searchInput.value.toLowerCase();
+  
+
   // when clicked, make an API call to the PokeAPI - "pokemon" endpoint
   // get the response...
-  let response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+  let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchPokemon}`);
 
   // ...then extract data from the response...
   let data = await response.json();
