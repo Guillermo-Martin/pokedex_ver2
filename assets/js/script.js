@@ -47,31 +47,16 @@ $searchBtn.addEventListener("click", async function(event){
   // change the text content to be the genus
   $h3Genus.textContent = speciesData.genera[7].genus;
 
-  //  ===== create a ul to hold select info =====
-  let $ul = document.createElement("ul");
-  // create an li for type, height, weight, and description
-  let $typeLi = document.createElement("li");
-  let $heightLi = document.createElement("li");
-  let $weightLi = document.createElement("li");
-  let $descLi = document.createElement("li");
-  // add text to the li's
+  //  ===== change info =====
+  // target the li's
+  let $liType = document.getElementById("pokemonType");
+  let $liHeight = document.getElementById("pokemonHeight");
+  let $liWeight = document.getElementById("pokemonWeight");
+  // change their text
+  $liType.textContent = data.types[0].type.name;
+  $liHeight.textContent = data.height // in decimeters
+  $liWeight.textContent = data.weight // in hectograms
 
-  $typeLi.textContent = data.types[0].type.name;
-  $heightLi.textContent = "Height: " + data.height; // in decimeters
-  $weightLi.textContent = "Weight: " + data.weight; // in hectograms
-  
-  // append all li's to ul
-  $ul.appendChild($typeLi);
-  $ul.appendChild($heightLi);
-  $ul.appendChild($weightLi);
-  
-  // append ul with everything to displayDiv
-  // target displayDiv
-  let $displayDiv = document.getElementById("displayDiv");
-  // append $ul to $displayDiv
-  $displayDiv.appendChild($ul);
-
-  
   // ===== change picture of pokemon =====
   // target the img tag
   let $pokemonImg = document.getElementById("pokemonImg");
