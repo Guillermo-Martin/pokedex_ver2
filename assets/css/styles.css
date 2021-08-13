@@ -7,6 +7,7 @@ html {
   box-sizing: inherit;
 }
 
+/* Search form */
 .pokedex-form {
   border: 3px solid black;
   text-align: center;
@@ -22,4 +23,18 @@ html {
   border-style: solid;
   border-width: 1px;
   text-align: center;
+}
+
+/* https://stackoverflow.com/questions/1457849/how-to-remove-the-border-highlight-on-an-input-text-element?rq=1 */
+#searchInput:focus {
+  outline: none;
+}
+
+#searchBtn {
+  border-radius: 30px;
+  padding: 0.7rem;
+  border: none;
+  background-color: #e73f33;
+  color: white;
+  font-weight:700
 }
