@@ -38,3 +38,23 @@ html {
   color: white;
   font-weight:700
 }
+
+/* Display */
+#displayDiv {
+  border: 3px solid black;
+  text-align: center;
+}
+
+#pokemonImg {
+  border: 3px solid orange;
+  width: 80%;
+}
+
+#pokemonId {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+#pokemonName {
+  font-size: 2rem;
+}
