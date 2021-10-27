@@ -1,3 +1,5 @@
+import { gsap } from './../../node_modules/gsap/index.js';
+
 // target search button
 let $searchBtn = document.getElementById("searchBtn");
 // add event listener to button
@@ -10,7 +12,6 @@ $searchBtn.addEventListener("click", async function(event){
   // 2.  convert the string to all lowercase, save to variable, add to url
   let searchPokemon = $searchInput.value.toLowerCase();
   
-
   // when clicked, make an API call to the PokeAPI - "pokemon" endpoint
   // get the response...
   let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchPokemon}`);
@@ -73,4 +74,5 @@ $searchBtn.addEventListener("click", async function(event){
   $pokemonDesc.textContent = speciesData.flavor_text_entries[1].flavor_text;
 });
 
-
+// greensock animations
+gsap.to("#searchBtn", { x:700, y:400, scale:3, rotation:360, duration:3 });
