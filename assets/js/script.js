@@ -1,5 +1,10 @@
 import { gsap } from './../../node_modules/gsap/index.js';
 
+let hasAnimated = false;
+
+// greensock animations
+let pokemonImgAnimation = gsap.fromTo("#pokemonImg", { rotationY: 90 }, { rotationY: 0, duration: 0.4, paused: true });
+
 // target search button
 let $searchBtn = document.getElementById("searchBtn");
 // add event listener to button
@@ -8,6 +13,7 @@ $searchBtn.addEventListener("click", async function(event){
 
   // 1.  get the value of the input (target the searchInput)
   let $searchInput = document.getElementById("searchInput");
+
   // 2.  convert the input to all lowercase and save to variable, add to url
   let searchPokemon = $searchInput.value.toLowerCase();
   
@@ -63,12 +69,12 @@ $searchBtn.addEventListener("click", async function(event){
   // change the alt attribute to be the pokemon name
   $pokemonImg.setAttribute("alt", data.name);
 
+  // when the pokemon image pops up, animate it
+  pokemonImgAnimation.restart();
+
   // 11. ===== change description of pokemon =====
   // target the description tag
   let $pokemonDesc = document.getElementById("pokemonDesc");
   // change its text to be the flavor text
   $pokemonDesc.textContent = speciesData.flavor_text_entries[1].flavor_text;
 });
-
-// greensock animations
-gsap.to("#searchBtn", { x:700, y:400, scale:3, rotation:360, duration:3 });

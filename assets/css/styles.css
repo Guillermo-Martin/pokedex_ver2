@@ -9,7 +9,7 @@ html {
 
 /* Search form */
 .pokedex-form {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   text-align: center;
   width: 100%;
   padding: 1rem;
@@ -41,12 +41,13 @@ html {
 
 /* Display */
 #displayDiv {
-  border: 3px solid black;
+  /* border: 3px solid black; */
+  position: relative;
   text-align: center;
 }
 
 #pokemonImg {
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
   width: 80%;
 }
 
