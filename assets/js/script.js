@@ -1,9 +1,8 @@
 import { gsap } from './../../node_modules/gsap/index.js';
 
-let hasAnimated = false;
-
 // greensock animations
 let pokemonImgAnimation = gsap.fromTo("#pokemonImg", { rotationY: 90 }, { rotationY: 0, duration: 0.4, paused: true });
+let basicInfoAnimation = gsap.timeline();
 
 // target search button
 let $searchBtn = document.getElementById("searchBtn");
@@ -71,6 +70,13 @@ $searchBtn.addEventListener("click", async function(event){
 
   // when the pokemon image pops up, animate it
   pokemonImgAnimation.restart();
+
+  // animate the ID and name
+  basicInfoAnimation
+    .from("#pokemon-basic-info span", {opacity: 0, stagger:0.5, duration:1})
+    .from("#pokemonGenus", {opacity: 0, duration:1})
+    .from("#pokemonDesc", {opacity: 0, duration:1})
+    .from("ul li", {opacity: 0, stagger:0.5, duration:1})
 
   // 11. ===== change description of pokemon =====
   // target the description tag
