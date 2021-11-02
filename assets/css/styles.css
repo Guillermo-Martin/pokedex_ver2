@@ -59,3 +59,7 @@ html {
 #pokemonName {
   font-size: 2rem;
 }
+
+#pokemonStats {
+  list-style-type: none;
+}

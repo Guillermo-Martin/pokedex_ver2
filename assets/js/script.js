@@ -1,7 +1,7 @@
 import { gsap } from './../../node_modules/gsap/index.js';
 
 // greensock animations
-let pokemonImgAnimation = gsap.fromTo("#pokemonImg", { rotationY: 90 }, { rotationY: 0, duration: 0.4, paused: true });
+let pokemonImgAnimation = gsap.from("#pokemonImg", { scale: 10, duration: 0.3, paused: true });
 let basicInfoAnimation = gsap.timeline();
 
 // target search button
@@ -56,9 +56,9 @@ $searchBtn.addEventListener("click", async function(event){
   let $liHeight = document.getElementById("pokemonHeight");
   let $liWeight = document.getElementById("pokemonWeight");
   // change their text
-  $liType.textContent = data.types[0].type.name;
-  $liHeight.textContent = data.height // in decimeters
-  $liWeight.textContent = data.weight // in hectograms
+  $liType.textContent = "Type: " + data.types[0].type.name;
+  $liHeight.textContent = "Height: " + data.height // in decimeters
+  $liWeight.textContent = "Weight: " + data.weight // in hectograms
 
   // 10.  ===== change picture of pokemon =====
   // target the img tag
@@ -73,10 +73,11 @@ $searchBtn.addEventListener("click", async function(event){
 
   // animate the ID and name
   basicInfoAnimation
-    .from("#pokemon-basic-info span", {opacity: 0, stagger:0.5, duration:1})
-    .from("#pokemonGenus", {opacity: 0, duration:1})
-    .from("#pokemonDesc", {opacity: 0, duration:1})
-    .from("ul li", {opacity: 0, stagger:0.5, duration:1})
+    .from("#pokemonImg", { scale: 10, duration: 0.3, paused: true })
+    .from("#pokemon-basic-info span", {opacity: 0, stagger:0.3, duration:0.5}, "+=0.1")
+    .from("#pokemonGenus", {opacity: 0, duration:0.3}, "+=0.1")
+    .from("#pokemonDesc", {opacity: 0, duration:0.3}, "+=0.1")
+    .from("ul li", {opacity: 0, stagger:0.5, duration:0.3}, "+=0.1")
 
   // 11. ===== change description of pokemon =====
   // target the description tag
