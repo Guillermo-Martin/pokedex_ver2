@@ -60,6 +60,13 @@ $searchBtn.addEventListener("click", async function(event){
   let $pokemonImg = document.getElementById("pokemonImg");
   $pokemonImg.setAttribute("src", data.sprites.front_default);
   $pokemonImg.setAttribute("alt", data.name);
+  // give the image an event listener; pokemon will bounce when clicked
+  $pokemonImg.addEventListener("click", function() {
+    let bounceAnimation = gsap.timeline({repeat: 1});
+    bounceAnimation
+      .to("#pokemonImg", {y: -10, duration: 0.09})
+      .to("#pokemonImg", {y: 0, duration: 0.09})
+  });
 
   // ===== animations =====
   // when the pokemon image pops up, animate it
