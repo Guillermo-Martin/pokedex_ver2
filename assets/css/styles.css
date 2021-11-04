@@ -44,6 +44,7 @@ html {
   /* border: 3px solid black; */
   position: relative;
   text-align: center;
+  overflow: hidden;
 }
 
 #pokemonImg {

@@ -74,11 +74,11 @@ $searchBtn.addEventListener("click", async function(event){
 
   // animate the ID and name
   basicInfoAnimation
-    .from("#pokemonImg", { scale: 10, duration: 0.3, paused: true })
-    .from("#pokemon-basic-info span", {opacity: 0, duration:0.3}, "+=0.5")
-    .from("#pokemonGenus", {opacity: 0, duration:0.3}, "+=0.1")
-    .from("#pokemonDesc", {opacity: 0, duration:0.3}, "+=0.1")
-    .from("ul li", {opacity: 0, duration:0.3}, "+=0.1")
+    .from("#pokemonImg", { scale: 10, duration: 1, paused: true })
+    .from("#pokemon-basic-info", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.5")
+    .from("#pokemonGenus", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.1")
+    .from("#pokemonDesc", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.1")
+    .from("ul li", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.1")
 
   // 11. ===== change description of pokemon =====
   // target the description tag, change text to be flavor text
