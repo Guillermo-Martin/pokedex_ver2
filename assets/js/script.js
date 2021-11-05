@@ -129,6 +129,4 @@ $searchBtn.addEventListener("click", async function(event){
     .from("#pokemonGenus", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.1")
     .from("#pokemonDesc", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.1")
     .from("ul li", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.1")
-
-  
 });

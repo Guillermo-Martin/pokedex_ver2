@@ -7,6 +7,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  transition: background-color 0.5s ease-in; 
+}
+
 /* Search form */
 .pokedex-form {
   /* border: 3px solid black; */
