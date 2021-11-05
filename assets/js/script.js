@@ -1,8 +1,7 @@
 import { gsap } from './../../node_modules/gsap/index.js';
 
 // greensock animations
-let pokemonImgAnimation = gsap.from("#pokemonImg", { scale: 10, duration: 0.3, paused: true });
-let basicInfoAnimation = gsap.timeline();
+let pokemonEnterAnimation = gsap.timeline();
 
 // target search button and add an event listener
 let $searchBtn = document.getElementById("searchBtn");
@@ -117,14 +116,9 @@ $searchBtn.addEventListener("click", async function(event){
 
   // --------------------------------------------------
 
-
-  // ===== animations =====
-  // when the pokemon image pops up, animate it
-  pokemonImgAnimation.restart();
-
   // animate the ID and name
-  basicInfoAnimation
-    .from("#pokemonImg", { scale: 10, duration: 1, paused: true })
+  pokemonEnterAnimation
+    .fromTo("#pokemonImg", { scale: 10 }, {scale: 1, duration: 0.3} )
     .from("#pokemon-basic-info", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.5")
     .from("#pokemonGenus", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.1")
     .from("#pokemonDesc", {opacity: 0, transform: "skewX(95deg)", duration:0.08}, "+=0.1")
