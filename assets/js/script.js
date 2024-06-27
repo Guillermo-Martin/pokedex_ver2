@@ -24,6 +24,17 @@ form.addEventListener("submit", async (event) => {
 
     // see data
     console.log(pokemonData);
+
+    // flavor text
+    let speciesRes = await fetch(pokemonData.species.url);
+  
+    // parse the data as JSON
+    let speciesData = await speciesRes.json();
+
+    // see data
+    console.log(speciesData);
+
+
   } catch (err) {
     console.log("Something went wrong.");
     console.log(err);
