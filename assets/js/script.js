@@ -54,7 +54,30 @@ form.addEventListener("submit", async (event) => {
     pokemonDefaultImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
     pokemonShinyImg.setAttribute("alt", `Shiny version of ${pokemonData.name}`);
 
-    console.log(pokemonDefault, pokemonShiny);
+
+    // get the copy
+    let pokemonName = pokemonData.name;
+    let pokemonNum = pokemonData.id;
+    let pokemonType1 = pokemonData.types[0].type.name
+    let pokemonType2 = pokemonData.types[1].type.name
+
+    // console.log(pokemonData.types[0].type.name, pokemonData.types[1].type.name);
+
+    // console.log(pokemonData.name, pokemonData.id, pokemonData.types.type);
+
+    // target the text elements
+    let pokemonNameElem = document.getElementById("pokemon-name");
+    let pokemonNumberElem = document.getElementById("pokemon-number");
+    let pokemonFlavorTextElem = document.getElementById("pokemon-flavor-text");
+    let pokemonTypeElem = document.getElementById("pokemon-type");
+
+    // set the text elements
+    pokemonNameElem.textContent = pokemonName;
+    pokemonNumberElem.textContent = pokemonNum;
+    pokemonFlavorTextElem.textContent = flavorText;
+    pokemonTypeElem.textContent = pokemonType1;
+
+    // console.log(pokemonDefault, pokemonShiny);
 
 
 
