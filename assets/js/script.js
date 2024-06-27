@@ -37,15 +37,16 @@ form.addEventListener("submit", async (event) => {
     // filter the flavor_text_entries array by language
     let filteredArr = flavorTextArr.filter(entry => entry.language.name === "en");
 
-    console.log(filteredArr, "line 44");
-
-    // for(let i = 0; i < speciesData.flavor_text_entries.length; i++) {
-    //   // console.log(speciesData.flavor_text_entries[i].flavor_text);
-    //   console.log(speciesData.flavor_text_entries[i].language.name);
-    // }
+    // console.log(filteredArr, "line 44");
 
     // to get flavor text
-    // console.log(speciesData.flavor_text_entries[1].flavor_text);
+    // console.log(filteredArr[10].flavor_text);
+
+    // generate a random flavor text
+    let randomNum = Math.floor(Math.random() * filteredArr.length);
+    let flavorText = filteredArr[randomNum].flavor_text;
+
+    console.log("Flavor text", flavorText);
 
 
   } catch (err) {
