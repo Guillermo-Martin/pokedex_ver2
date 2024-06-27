@@ -15,13 +15,18 @@ form.addEventListener("submit", async (event) => {
   // see searchInput
   // console.log(searchInput);
 
-  // make API request and get the data
-  let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput}`);
+  try {
+    // make API request and get the data
+    let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput}`);
 
-  // parse the data as JSON
-  let pokemonData = await response.json();
+    // parse the data as JSON
+    let pokemonData = await response.json();
 
-  // see data
-  console.log(pokemonData);
+    // see data
+    console.log(pokemonData);
+  } catch (err) {
+    console.log("Something went wrong.");
+    console.log(err);
+  };
 });
 
