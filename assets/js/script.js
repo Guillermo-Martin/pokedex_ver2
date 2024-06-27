@@ -28,7 +28,24 @@ form.addEventListener("submit", async (event) => {
     let speciesData = await speciesRes.json();
 
     // see data
-    console.log(speciesData);
+    // console.log(speciesData.flavor_text_entries);
+
+    let flavorTextArr = speciesData.flavor_text_entries;
+
+    // console.log("line 35", flavorTextArr);
+
+    // filter the flavor_text_entries array by language
+    let filteredArr = flavorTextArr.filter(entry => entry.language.name === "en");
+
+    console.log(filteredArr, "line 44");
+
+    // for(let i = 0; i < speciesData.flavor_text_entries.length; i++) {
+    //   // console.log(speciesData.flavor_text_entries[i].flavor_text);
+    //   console.log(speciesData.flavor_text_entries[i].language.name);
+    // }
+
+    // to get flavor text
+    // console.log(speciesData.flavor_text_entries[1].flavor_text);
 
 
   } catch (err) {
