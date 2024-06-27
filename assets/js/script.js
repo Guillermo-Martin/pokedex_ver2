@@ -27,26 +27,36 @@ form.addEventListener("submit", async (event) => {
     let speciesRes = await fetch(pokemonData.species.url);
     let speciesData = await speciesRes.json();
 
-    // see data
-    // console.log(speciesData.flavor_text_entries);
-
+    // get flavor text, filter by language (english)
     let flavorTextArr = speciesData.flavor_text_entries;
-
-    // console.log("line 35", flavorTextArr);
-
-    // filter the flavor_text_entries array by language
     let filteredArr = flavorTextArr.filter(entry => entry.language.name === "en");
-
-    // console.log(filteredArr, "line 44");
-
-    // to get flavor text
-    // console.log(filteredArr[10].flavor_text);
 
     // generate a random flavor text
     let randomNum = Math.floor(Math.random() * filteredArr.length);
     let flavorText = filteredArr[randomNum].flavor_text;
 
     console.log("Flavor text", flavorText);
+
+    // ----- display content -----
+    // get the images (default and shiny)
+    let pokemonDefault = pokemonData.sprites.front_default;
+    let pokemonShiny = pokemonData.sprites.front_shiny;
+
+    // target the image elements
+    let pokemonDefaultImg = document.getElementById("pokemon-default");
+    let pokemonShinyImg = document.getElementById("pokemon-shiny");
+
+    // set the attributes for the image elements
+    pokemonDefaultImg.setAttribute("src", pokemonDefault);
+    pokemonShinyImg.setAttribute("src", pokemonShiny);
+
+    // set the "alt" attribute for image elements
+    pokemonDefaultImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+    pokemonShinyImg.setAttribute("alt", `Shiny version of ${pokemonData.name}`);
+
+    console.log(pokemonDefault, pokemonShiny);
+
+
 
 
   } catch (err) {
