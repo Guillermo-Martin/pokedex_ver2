@@ -58,10 +58,8 @@ form.addEventListener("submit", async (event) => {
     // get the copy
     let pokemonName = pokemonData.name;
     let pokemonNum = pokemonData.id;
-    let pokemonType1 = pokemonData.types[0].type.name
-    let pokemonType2 = pokemonData.types[1].type.name
 
-    // console.log(pokemonData.types[0].type.name, pokemonData.types[1].type.name);
+    // console.log(pokemonData.types);
 
     // console.log(pokemonData.name, pokemonData.id, pokemonData.types.type);
 
@@ -75,12 +73,13 @@ form.addEventListener("submit", async (event) => {
     pokemonNameElem.textContent = pokemonName;
     pokemonNumberElem.textContent = pokemonNum;
     pokemonFlavorTextElem.textContent = flavorText;
-    pokemonTypeElem.textContent = pokemonType1;
-
-    // console.log(pokemonDefault, pokemonShiny);
-
-
-
+    
+    // setting the type: if the pokemon has two types, display both, else, display main type
+    if(pokemonData.types.length > 1) {
+      pokemonTypeElem.textContent = `${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+    } else {
+      pokemonTypeElem.textContent = pokemonData.types[0].type.name;
+    }
 
   } catch (err) {
     console.log("Something went wrong.");
