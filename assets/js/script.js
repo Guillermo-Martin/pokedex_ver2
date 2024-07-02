@@ -1,8 +1,20 @@
 console.log("connected!");
 
+// greensock animation example
+// use a script tag or an external JS file
+document.addEventListener("DOMContentLoaded", (event) => {
+  // gsap code here!
+  // alert("gsap loaded!");
+  console.log("gsap loaded");
+  gsap.to("#hero-pikachu", {opacity: 0, duration: 1});
+});
+
+
+
 // get the value from the input after a user clicks on the "Submit" button
 // target the form
 let form = document.getElementById("form");
+
 
 // on submit, get the value of the input box, make an API request
 form.addEventListener("submit", async (event) => {
@@ -35,7 +47,9 @@ form.addEventListener("submit", async (event) => {
     let randomNum = Math.floor(Math.random() * filteredArr.length);
     let flavorText = filteredArr[randomNum].flavor_text;
 
-    console.log("Flavor text", flavorText);
+    // ----- pikachu disappear animation -----
+    // console.log("Flavor text", flavorText);
+    gsap.to("#hero-pikachu", {rotation: 360, x: 100, duration: 1});
 
     // ----- display content -----
     // get the images (default and shiny)
