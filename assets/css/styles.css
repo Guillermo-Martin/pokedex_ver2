@@ -13,4 +13,31 @@ body {
   /* font-optical-sizing: auto; */
   /* font-weight: <weight>;
   font-style: normal; */
+  position: relative;
+  min-height: 100vh;
 }
+
+.main-content {
+  border: 3px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+/* ---------- Hero ---------- */
+.hero-section .image-container {
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+/* ****** NEXT STEPS ****** */
+/* START WITH MOBILE */
+/* 1. style h1 and subheader */
+/* 2. X Add image of pikachu */
+/* 3. Style form */
+/* 4. Add info on breakpoints */
