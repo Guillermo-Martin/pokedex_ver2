@@ -1,4 +1,5 @@
 console.log("connected!");
+var tl = gsap.timeline();
 
 // greensock animation example
 // use a script tag or an external JS file
@@ -8,14 +9,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
   console.log("gsap loaded");
   // gsap.to("#hero-pikachu", {opacity: 0, duration: 1});
 
-  var tl = gsap.timeline();
+  // var tl = gsap.timeline();
 
   // pikachu timeline
   // tl.to("#hero-pikachu", {opacity: 0, duration: 1})
   //   .to("#hero-pikachu", {display: "none", duration: 0.5});
 
   // form timeline
-  // tl.to("hero-section text-container")
+  // tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
+  //   .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
+  //   .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
 });
 
 
@@ -58,7 +61,10 @@ form.addEventListener("submit", async (event) => {
 
     // ----- pikachu disappear animation -----
     // console.log("Flavor text", flavorText);
-    gsap.to("#hero-pikachu", {rotation: 360, x: 100, duration: 1});
+    // form timeline
+    tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
+      .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
+      .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
 
     // ----- display content -----
     // get the images (default and shiny)
