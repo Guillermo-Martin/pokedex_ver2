@@ -104,6 +104,12 @@ button[type="submit"] {
   max-width: 228px;
   width: 75%;
   margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.04);
 }
 
 /* ****** NEXT STEPS ****** */
