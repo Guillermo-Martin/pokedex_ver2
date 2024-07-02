@@ -31,6 +31,20 @@ body {
   width: 100%;
 }
 
+/* ----- Text container ----- */
+h1 {
+  font-size: 64px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.subheader {
+  font-size: 28px;
+  margin: 0;
+  text-align: center;
+}
+
 .image-container img {
   width: 100%;
 }
