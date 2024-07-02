@@ -48,9 +48,14 @@ h1 {
   text-align: center;
 }
 
+.hero-section .text-container {
+  margin-bottom: 20px;
+}
+
 /* ----- Image container ----- */
 .hero-section .image-container {
   margin: 0 auto;
+  margin-bottom: 20px;
   width: 50%;
 }
 
@@ -70,6 +75,7 @@ h1 {
 label[for="searchInput"] {
   /* border: 3px solid red; */
   font-size: 12px;
+  margin-bottom: 4px;
 }
 
 #searchInput, button {
