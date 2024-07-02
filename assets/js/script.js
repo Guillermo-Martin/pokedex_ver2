@@ -64,27 +64,42 @@ form.addEventListener("submit", async (event) => {
     let pokemonDefault = pokemonData.sprites.front_default;
     let pokemonShiny = pokemonData.sprites.front_shiny;
 
+    // --------- ANIMATION -------------
     // ----- move form and pikachu disappear animation -----
     // console.log("Flavor text", flavorText);
     // form timeline
-    tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
-      .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
-      .to("#pikachu-waving", {opacity: 0, duration: 1}, "<")
-      .to("#pikachu-waving", {display: "none"});
+    // tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
+    //   .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
+    //   .to("#pikachu-waving", {opacity: 0, duration: 1}, "<")
+    //   .to("#pikachu-waving", {display: "none"});
+
+    // ----------------------------------
 
     // ----- display content -----
     // create the image elements
     // let pokemonImg1 = document.getElementById("pokemon-image-1");
     // pokemonImg1.setAttribute("src", pokemonDefault);
 
-    // target the image display
+    // 0. target the image display
     let imageDisplay = document.querySelector(".pokemon-display .image-container");
 
-    // create 2 image elements
+    // 1. remove pikachu
+    let pikachuWaving = document.getElementById("pikachu-waving");
+    pikachuWaving.remove();
+
+    // 2. create 2 divs to go into the pokemon display image container
+    let normPokemonDiv = document.createElement("div");
+    let shinyPokemonDiv = document.createElement("div");
+
+    // 3. append the 2 divs to the pokemon display image container
+    imageDisplay.appendChild(normPokemonDiv);
+    imageDisplay.appendChild(shinyPokemonDiv);
+
+    // 4. create 2 image elements
     let normPokemonImg = document.createElement("img");
     let shinyPokemonImg = document.createElement("img");
 
-    // give the image elements src, alt, and class attributes
+    // 5. give the image elements src, alt, and class attributes
     normPokemonImg.setAttribute("src", pokemonDefault);
     normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
     normPokemonImg.setAttribute("class", "");
@@ -93,8 +108,12 @@ form.addEventListener("submit", async (event) => {
     shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
     shinyPokemonImg.setAttribute("class", "");
 
-    imageDisplay.appendChild(normPokemonImg);
-    imageDisplay.appendChild(shinyPokemonImg);
+    // 6. append the image elements to the divs in the image container
+    normPokemonDiv.appendChild(normPokemonImg);
+    shinyPokemonDiv.appendChild(shinyPokemonImg);
+
+    // imageDisplay.appendChild(normPokemonImg);
+    // imageDisplay.appendChild(shinyPokemonImg);
 
     // add a src, alt, and class attribute
 
