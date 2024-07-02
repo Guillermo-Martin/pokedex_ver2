@@ -90,6 +90,10 @@ label[for="searchInput"] {
   margin-bottom: 20px;
 }
 
+#searchInput::placeholder {
+  color: #969696;
+}
+
 button[type="submit"] {
   border: 2px solid #000;
   border-radius: 20px;
