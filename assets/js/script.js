@@ -47,6 +47,7 @@ form.addEventListener("submit", async (event) => {
     // see data
     console.log(pokemonData);
 
+    // ******* GET DATA *******
     // using the retrieved data, make API request to get the flavor text, and parse data as JSON
     let speciesRes = await fetch(pokemonData.species.url);
     let speciesData = await speciesRes.json();
@@ -59,19 +60,51 @@ form.addEventListener("submit", async (event) => {
     let randomNum = Math.floor(Math.random() * filteredArr.length);
     let flavorText = filteredArr[randomNum].flavor_text;
 
-    // ----- pikachu disappear animation -----
-    // console.log("Flavor text", flavorText);
-    // form timeline
-    tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
-      .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
-      .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
-
-    // ----- display content -----
     // get the images (default and shiny)
     let pokemonDefault = pokemonData.sprites.front_default;
     let pokemonShiny = pokemonData.sprites.front_shiny;
 
-    // target the image elements
+    // ----- move form and pikachu disappear animation -----
+    // console.log("Flavor text", flavorText);
+    // form timeline
+    tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
+      .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
+      .to("#pikachu-waving", {opacity: 0, duration: 1}, "<")
+      .to("#pikachu-waving", {display: "none"});
+
+    // ----- display content -----
+    // create the image elements
+    // let pokemonImg1 = document.getElementById("pokemon-image-1");
+    // pokemonImg1.setAttribute("src", pokemonDefault);
+
+    // target the image display
+    let imageDisplay = document.querySelector(".pokemon-display .image-container");
+
+    // create 2 image elements
+    let normPokemonImg = document.createElement("img");
+    let shinyPokemonImg = document.createElement("img");
+
+    // give the image elements src, alt, and class attributes
+    normPokemonImg.setAttribute("src", pokemonDefault);
+    normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+    normPokemonImg.setAttribute("class", "");
+
+    shinyPokemonImg.setAttribute("src", pokemonShiny);
+    shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+    shinyPokemonImg.setAttribute("class", "");
+
+    imageDisplay.appendChild(normPokemonImg);
+    imageDisplay.appendChild(shinyPokemonImg);
+
+    // add a src, alt, and class attribute
+
+
+
+
+
+
+
+
     let pokemonDefaultImg = document.getElementById("pokemon-default");
     let pokemonShinyImg = document.getElementById("pokemon-shiny");
 
