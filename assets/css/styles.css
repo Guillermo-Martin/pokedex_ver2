@@ -27,9 +27,7 @@ body {
 }
 
 /* ---------- Hero ---------- */
-.hero-section .image-container {
-  width: 100%;
-}
+
 
 /* ----- Text container ----- */
 h1 {
@@ -45,13 +43,19 @@ h1 {
   text-align: center;
 }
 
+/* ----- Image container ----- */
+.hero-section .image-container {
+  margin: 0 auto;
+  width: 50%;
+}
+
 .image-container img {
   width: 100%;
 }
 
 /* ****** NEXT STEPS ****** */
 /* START WITH MOBILE */
-/* 1. style h1 and subheader */
+/* 1. X style h1 and subheader */
 /* 2. X Add image of pikachu */
 /* 3. Style form */
 /* 4. Add info on breakpoints */
