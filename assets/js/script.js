@@ -6,7 +6,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // gsap code here!
   // alert("gsap loaded!");
   console.log("gsap loaded");
-  gsap.to("#hero-pikachu", {opacity: 0, duration: 1});
+  // gsap.to("#hero-pikachu", {opacity: 0, duration: 1});
+
+  var tl = gsap.timeline();
+
+  // pikachu timeline
+  // tl.to("#hero-pikachu", {opacity: 0, duration: 1})
+  //   .to("#hero-pikachu", {display: "none", duration: 0.5});
+
+  // form timeline
+  // tl.to("hero-section text-container")
 });
 
 

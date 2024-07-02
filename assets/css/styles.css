@@ -32,8 +32,6 @@ body {
 }
 
 /* ---------- Hero ---------- */
-
-
 /* ----- Text container ----- */
 h1 {
   font-size: 64px;
@@ -52,8 +50,8 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* ----- Image container ----- */
-.hero-section .image-container {
+/* ---------- Pokemon display ---------- */
+.pokemon-display .image-container {
   margin: 0 auto;
   margin-bottom: 20px;
   width: 50%;
