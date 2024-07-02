@@ -112,6 +112,19 @@ form.addEventListener("submit", async (event) => {
     normPokemonDiv.appendChild(normPokemonImg);
     shinyPokemonDiv.appendChild(shinyPokemonImg);
 
+    // 7. create p elements
+    let normPokemonText = document.createElement("p");
+    let shinyPokemonText = document.createElement("p");
+
+    // 8. set the text content
+    normPokemonText.textContent = "Normal";
+    shinyPokemonText.textContent = "Shiny";
+
+    // 9.  append the text to the divs created earlier
+    normPokemonDiv.appendChild(normPokemonText);
+    shinyPokemonDiv.appendChild(shinyPokemonText);
+
+
     // imageDisplay.appendChild(normPokemonImg);
     // imageDisplay.appendChild(shinyPokemonImg);
 
