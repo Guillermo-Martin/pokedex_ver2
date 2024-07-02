@@ -91,9 +91,16 @@ form.addEventListener("submit", async (event) => {
     let normPokemonDiv = document.createElement("div");
     let shinyPokemonDiv = document.createElement("div");
 
+    // 2a. give the divs a class of "sprite-container"
+    normPokemonDiv.setAttribute("class", "sprite-container");
+    shinyPokemonDiv.setAttribute("class", "sprite-container");
+
     // 3. append the 2 divs to the pokemon display image container
     imageDisplay.appendChild(normPokemonDiv);
     imageDisplay.appendChild(shinyPokemonDiv);
+
+   
+
 
     // 4. create 2 image elements
     let normPokemonImg = document.createElement("img");
@@ -102,11 +109,11 @@ form.addEventListener("submit", async (event) => {
     // 5. give the image elements src, alt, and class attributes
     normPokemonImg.setAttribute("src", pokemonDefault);
     normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
-    normPokemonImg.setAttribute("class", "");
+    normPokemonImg.setAttribute("class", "pokemon-sprite");
 
     shinyPokemonImg.setAttribute("src", pokemonShiny);
     shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
-    shinyPokemonImg.setAttribute("class", "");
+    shinyPokemonImg.setAttribute("class", "pokemon-sprite");
 
     // 6. append the image elements to the divs in the image container
     normPokemonDiv.appendChild(normPokemonImg);
