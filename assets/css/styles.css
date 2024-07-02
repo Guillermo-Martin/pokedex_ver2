@@ -18,6 +18,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 16px;
 }
 
 .main-content {
@@ -68,6 +70,10 @@ h1 {
 label[for="searchInput"] {
   /* border: 3px solid red; */
   font-size: 12px;
+}
+
+#searchInput, button {
+  font-family: "Reem Kufi Fun", "Lato", "Roboto", sans-serif;
 }
 
 #searchInput {
