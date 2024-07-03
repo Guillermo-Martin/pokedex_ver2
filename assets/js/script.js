@@ -161,6 +161,15 @@ form.addEventListener("submit", async (event) => {
       pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
       textContainer.appendChild(pokemonType);
     }
+
+    // 17. create a p element for the flavor text
+    let pokemonFlavorText = document.createElement("p");
+
+    // 18. set the flavor text
+    pokemonFlavorText.textContent = flavorText;
+
+    // 19. append the flavor text to the textContainer
+    textContainer.appendChild(pokemonFlavorText);
     
 
     // imageDisplay.appendChild(normPokemonImg);
