@@ -139,6 +139,9 @@ form.addEventListener("submit", async (event) => {
       // 17. append the name to the container
       pokemonDisplay.prepend(pokemonName);
 
+      // 17a. give the pokemonType element a class
+      pokemonType.setAttribute("class", "pokemon-type");
+
       // 18. determine if the pokemon has 2 types (type elements created earlier), set it, then append it to the pokemon text-container element
       if(pokemonData.types.length > 1) {
         // 2 types
