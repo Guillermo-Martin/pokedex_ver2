@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
   //   .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
 });
 
-
+// if(document.getElementById("pikachu-waving")) {
+//   console.log("pikachu is there!");
+// }
 
 // get the value from the input after a user clicks on the "Submit" button
 // target the form
@@ -85,7 +87,13 @@ form.addEventListener("submit", async (event) => {
 
     // 1. remove pikachu
     let pikachuWaving = document.getElementById("pikachu-waving");
-    pikachuWaving.remove();
+
+    // check to see if pikachu is showing (this is for if a user searches again after searching for the first time)
+    if(pikachuWaving) {
+      alert("pikachu is there!");
+      pikachuWaving.remove();
+    }
+    
 
     // 2. create 2 divs to go into the pokemon display image container
     let normPokemonDiv = document.createElement("div");
@@ -175,57 +183,9 @@ form.addEventListener("submit", async (event) => {
     let searchAnother = document.createElement("p");
     searchAnother.textContent = "Search for another";
     form.prepend(searchAnother);
+
+
     
-
-    // imageDisplay.appendChild(normPokemonImg);
-    // imageDisplay.appendChild(shinyPokemonImg);
-
-    // add a src, alt, and class attribute
-
-
-
-
-
-
-
-
-    let pokemonDefaultImg = document.getElementById("pokemon-default");
-    let pokemonShinyImg = document.getElementById("pokemon-shiny");
-
-    // set the attributes for the image elements
-    pokemonDefaultImg.setAttribute("src", pokemonDefault);
-    pokemonShinyImg.setAttribute("src", pokemonShiny);
-
-    // set the "alt" attribute for image elements
-    pokemonDefaultImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
-    pokemonShinyImg.setAttribute("alt", `Shiny version of ${pokemonData.name}`);
-
-
-    // get the copy
-    // let pokemonName = pokemonData.name;
-    // let pokemonNum = pokemonData.id;
-
-    // console.log(pokemonData.types);
-
-    // console.log(pokemonData.name, pokemonData.id, pokemonData.types.type);
-
-    // target the text elements
-    let pokemonNameElem = document.getElementById("pokemon-name");
-    let pokemonNumberElem = document.getElementById("pokemon-number");
-    let pokemonFlavorTextElem = document.getElementById("pokemon-flavor-text");
-    let pokemonTypeElem = document.getElementById("pokemon-type");
-
-    // set the text elements
-    pokemonNameElem.textContent = pokemonName;
-    pokemonNumberElem.textContent = pokemonNum;
-    pokemonFlavorTextElem.textContent = flavorText;
-    
-    // setting the type: if the pokemon has two types, display both, else, display main type
-    if(pokemonData.types.length > 1) {
-      pokemonTypeElem.textContent = `${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
-    } else {
-      pokemonTypeElem.textContent = pokemonData.types[0].type.name;
-    }
 
   } catch (err) {
     console.log("Something went wrong.");
