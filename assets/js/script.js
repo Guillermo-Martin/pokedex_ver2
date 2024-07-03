@@ -144,8 +144,23 @@ form.addEventListener("submit", async (event) => {
     // 14. set the pokemon name
     pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
 
-    // 14. append the name to the container
+    // 15. append the name to the container
     textContainer.appendChild(pokemonName);
+
+    // 16. create a p element for the pokemon type(s)
+    let pokemonType = document.createElement("p");
+
+    // 16. determine if the pokemon has 2 types, set it, then append it to the pokemon text-container element
+    if(pokemonData.types.length > 1) {
+      // pokemonTypeElem.textContent = `${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+      pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+      textContainer.appendChild(pokemonType);
+    } else {
+      // pokemonTypeElem.textContent = pokemonData.types[0].type.name;
+      pokemonType.textConent = `Type: ${pokemonData.types[0].type.name}`;
+      textContainer.appendChild(pokemonType);
+    }
+    
 
     // imageDisplay.appendChild(normPokemonImg);
     // imageDisplay.appendChild(shinyPokemonImg);
