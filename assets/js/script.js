@@ -200,3 +200,24 @@ form.addEventListener("submit", async (event) => {
 //   //   .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
 //   //   .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
 // });
+
+let testName = "pikachu";
+let capitalName = "";
+
+// console.log(testName);
+
+
+// add the rest of letters 
+let capitalize = (string) => {
+  // 1. capitalize the first letter of the string
+  capitalName = string[0].toUpperCase();
+
+  // 2. loop through the rest of the string and add it to the capitalized name
+  for(let i = 1; i < string.length; i++) {
+    capitalName = capitalName + string[i];
+  }
+
+  console.log(capitalName);
+}
+
+capitalize(testName);

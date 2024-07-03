@@ -77,6 +77,12 @@ h1 {
   margin: 0;
 }
 
+/* name */
+.pokemon-name {
+  text-align: center;
+  font-weight: 600;
+}
+
 /* ----- Form ----- */
 #form {
   /* border: 3px solid blue; */
