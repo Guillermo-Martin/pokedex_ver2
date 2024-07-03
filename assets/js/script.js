@@ -26,6 +26,8 @@ let normPokemonImg = document.createElement("img");
 let shinyPokemonImg = document.createElement("img");
 let textContainer = document.createElement("div");
 let pokemonName = document.createElement("h2");
+let pokemonType = document.createElement("p");
+let pokemonFlavorText = document.createElement("p");
 
 
 // get the value from the input after a user clicks on the "Submit" button
@@ -160,6 +162,28 @@ form.addEventListener("submit", async (event) => {
       // 15. append the name to the container
       // textContainer.appendChild(pokemonName);
       pokemonDisplay.prepend(pokemonName);
+
+      // 16. determine if the pokemon has 2 types, set it, then append it to the pokemon text-container element
+      if(pokemonData.types.length > 1) {
+        // pokemonTypeElem.textContent = `${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+        pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+        textContainer.appendChild(pokemonType);
+      } else {
+        // pokemonTypeElem.textContent = pokemonData.types[0].type.name;
+        pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
+        textContainer.appendChild(pokemonType);
+      }
+
+      // 17. create a p element for the flavor text
+      let pokemonFlavorText = document.createElement("p");
+
+      // 18. set the flavor text
+      pokemonFlavorText.textContent = flavorText;
+
+      // 19. append the flavor text to the textContainer
+      textContainer.appendChild(pokemonFlavorText);
+
+
     } else {
       // if pikachu isn't there
       alert("pikachu isn't there!");
@@ -179,33 +203,48 @@ form.addEventListener("submit", async (event) => {
 
       // change the name
       pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
+
+      // change the type
+      // 16. determine if the pokemon has 2 types, set it, then append it to the pokemon text-container element
+      if(pokemonData.types.length > 1) {
+        // pokemonTypeElem.textContent = `${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+        pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+        // textContainer.appendChild(pokemonType);
+      } else {
+        // pokemonTypeElem.textContent = pokemonData.types[0].type.name;
+        pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
+        // textContainer.appendChild(pokemonType);
+      }
+
+      // change the flavor text
+      pokemonFlavorText.textContent = flavorText;
     }
 
 
 
 
     // 16. create a p element for the pokemon type(s)
-    let pokemonType = document.createElement("p");
+    // let pokemonType = document.createElement("p");
 
     // 16. determine if the pokemon has 2 types, set it, then append it to the pokemon text-container element
-    if(pokemonData.types.length > 1) {
-      // pokemonTypeElem.textContent = `${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
-      pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
-      textContainer.appendChild(pokemonType);
-    } else {
-      // pokemonTypeElem.textContent = pokemonData.types[0].type.name;
-      pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
-      textContainer.appendChild(pokemonType);
-    }
+    // if(pokemonData.types.length > 1) {
+    //   // pokemonTypeElem.textContent = `${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+    //   pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+    //   textContainer.appendChild(pokemonType);
+    // } else {
+    //   // pokemonTypeElem.textContent = pokemonData.types[0].type.name;
+    //   pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
+    //   textContainer.appendChild(pokemonType);
+    // }
 
     // 17. create a p element for the flavor text
-    let pokemonFlavorText = document.createElement("p");
+    // let pokemonFlavorText = document.createElement("p");
 
-    // 18. set the flavor text
-    pokemonFlavorText.textContent = flavorText;
+    // // 18. set the flavor text
+    // pokemonFlavorText.textContent = flavorText;
 
-    // 19. append the flavor text to the textContainer
-    textContainer.appendChild(pokemonFlavorText);
+    // // 19. append the flavor text to the textContainer
+    // textContainer.appendChild(pokemonFlavorText);
 
     // 20. add "Search for another" text to form
     let searchAnother = document.createElement("p");
