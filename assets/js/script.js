@@ -21,13 +21,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
   //   .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
 });
 
-
+// elements to create
 let normPokemonImg = document.createElement("img");
 let shinyPokemonImg = document.createElement("img");
+let textContainer = document.createElement("div");
+let pokemonName = document.createElement("h2");
 
-// if(document.getElementById("pikachu-waving")) {
-//   console.log("pikachu is there!");
-// }
 
 // get the value from the input after a user clicks on the "Submit" button
 // target the form
@@ -137,6 +136,30 @@ form.addEventListener("submit", async (event) => {
       // 9.  append the text to the divs created earlier
       normPokemonDiv.appendChild(normPokemonText);
       shinyPokemonDiv.appendChild(shinyPokemonText);
+
+      // 10.  create a div with the class of "text-container"
+      // let textContainer = document.createElement("div");
+
+      // 11. give the text container a class
+      textContainer.setAttribute("class", "text-container");
+
+      // 12. append the text container to the "pokemon display" container
+      let pokemonDisplay = document.getElementById("pokemon-display");
+      pokemonDisplay.appendChild(textContainer);
+
+      // 13. create an h2 for the pokemon name and number
+      // let pokemonName = document.createElement("h2");
+
+      // 13a. add a class for the h2 for styling
+      pokemonName.setAttribute("class", "pokemon-name");
+      pokemonName.setAttribute("id", "pokemon-name");
+
+      // 14. set the pokemon name
+      pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
+
+      // 15. append the name to the container
+      // textContainer.appendChild(pokemonName);
+      pokemonDisplay.prepend(pokemonName);
     } else {
       // if pikachu isn't there
       alert("pikachu isn't there!");
@@ -153,33 +176,13 @@ form.addEventListener("submit", async (event) => {
 
       shinyPokemonImg.setAttribute("src", pokemonShiny);
       shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+
+      // change the name
+      pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
     }
 
 
 
-
-
-
-
-    // 10.  create a div with the class of "text-container"
-    let textContainer = document.createElement("div");
-
-    // 11. give the text container a class
-    textContainer.setAttribute("class", "text-container");
-
-    // 12. append the text container to the "pokemon display" container
-    let pokemonDisplay = document.getElementById("pokemon-display");
-    pokemonDisplay.appendChild(textContainer);
-
-    // 13. create an h2 for the pokemon name and number
-    let pokemonName = document.createElement("h2");
-
-    // 14. set the pokemon name
-    pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
-
-    // 15. append the name to the container
-    // textContainer.appendChild(pokemonName);
-    pokemonDisplay.prepend(pokemonName);
 
     // 16. create a p element for the pokemon type(s)
     let pokemonType = document.createElement("p");
