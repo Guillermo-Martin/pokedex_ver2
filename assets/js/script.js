@@ -1,27 +1,7 @@
 console.log("connected!");
 var tl = gsap.timeline();
 
-// greensock animation example
-// use a script tag or an external JS file
-document.addEventListener("DOMContentLoaded", (event) => {
-  // gsap code here!
-  // alert("gsap loaded!");
-  console.log("gsap loaded");
-  // gsap.to("#hero-pikachu", {opacity: 0, duration: 1});
-
-  // var tl = gsap.timeline();
-
-  // pikachu timeline
-  // tl.to("#hero-pikachu", {opacity: 0, duration: 1})
-  //   .to("#hero-pikachu", {display: "none", duration: 0.5});
-
-  // form timeline
-  // tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
-  //   .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
-  //   .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
-});
-
-// elements to create
+// ---------- Elements to create for displaying info ----------
 let normPokemonImg = document.createElement("img");
 let shinyPokemonImg = document.createElement("img");
 let textContainer = document.createElement("div");
@@ -29,32 +9,29 @@ let pokemonName = document.createElement("h2");
 let pokemonType = document.createElement("p");
 let pokemonFlavorText = document.createElement("p");
 
-
-// get the value from the input after a user clicks on the "Submit" button
+// ---------- Form functionality ----------
 // target the form
 let form = document.getElementById("form");
-
 
 // on submit, get the value of the input box, make an API request
 form.addEventListener("submit", async (event) => {
   // prevent form default behavior
   event.preventDefault();
 
-  // input value (API direct link uses lowercase letters)
+  // get input value (API direct link uses lowercase letters)
   let searchInput = document.getElementById("searchInput").value.toLowerCase();
 
-  // see searchInput
-  // console.log(searchInput);
-
+  // ---------- API Request ----------
   try {
+    // ----- Getting the data -----
     // make API request, get the general data, and parse data as JSON
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput}`);
     let pokemonData = await response.json();
 
     // see data
-    console.log(pokemonData);
+    // console.log(pokemonData);
 
-    // ******* GET DATA *******
+    // get additional data:  flavor text
     // using the retrieved data, make API request to get the flavor text, and parse data as JSON
     let speciesRes = await fetch(pokemonData.species.url);
     let speciesData = await speciesRes.json();
@@ -71,44 +48,33 @@ form.addEventListener("submit", async (event) => {
     let pokemonDefault = pokemonData.sprites.front_default;
     let pokemonShiny = pokemonData.sprites.front_shiny;
 
-    // --------- ANIMATION -------------
-    // ----- move form and pikachu disappear animation -----
-    // console.log("Flavor text", flavorText);
-    // form timeline
-    // tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
-    //   .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
-    //   .to("#pikachu-waving", {opacity: 0, duration: 1}, "<")
-    //   .to("#pikachu-waving", {display: "none"});
-
-    // ----------------------------------
-
-    // ----- display content -----
     
 
-    // 0. target the image display
+    // ----- Displaying the data -----
+    // 1. target the image display
     let imageDisplay = document.querySelector(".pokemon-display .image-container");
 
-    // 1. remove pikachu
+    // 2. target pikachu's image
     let pikachuWaving = document.getElementById("pikachu-waving");
 
-    // check to see if pikachu is showing (this is for if a user searches again after searching for the first time)
+    // 3. check to see if pikachu is showing (this is for if a user searches again after searching for the first time)
     if(pikachuWaving) {
-      alert("pikachu is there!");
+      // 4. if pikachu is there, remove him
       pikachuWaving.remove();
 
-      // 2. create 2 divs to go into the pokemon display image container
+      // 5. create 2 divs to go into the pokemon display image container
       let normPokemonDiv = document.createElement("div");
       let shinyPokemonDiv = document.createElement("div");
 
-      // 2a. give the divs a class of "sprite-container"
+      // 6. give the divs a class of "sprite-container"
       normPokemonDiv.setAttribute("class", "sprite-container");
       shinyPokemonDiv.setAttribute("class", "sprite-container");
 
-      // 3. append the 2 divs to the pokemon display image container
+      // 7. append the 2 divs to the pokemon display image container
       imageDisplay.appendChild(normPokemonDiv);
       imageDisplay.appendChild(shinyPokemonDiv);
 
-      // 5. give the image elements src, alt, and class attributes
+      // 8. give the image elements (created earlier) src, alt, and class attributes
       normPokemonImg.setAttribute("src", pokemonDefault);
       normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
       normPokemonImg.setAttribute("class", "pokemon-sprite");
@@ -117,62 +83,62 @@ form.addEventListener("submit", async (event) => {
       shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
       shinyPokemonImg.setAttribute("class", "pokemon-sprite");
 
-      // 6. append the image elements to the divs in the image container
+      // 9. append the image elements to the divs in the image container
       normPokemonDiv.appendChild(normPokemonImg);
       shinyPokemonDiv.appendChild(shinyPokemonImg);
 
-       // 7. create p elements
+      // 10. create p elements to indicate which image is normal and shiny
       let normPokemonText = document.createElement("p");
       let shinyPokemonText = document.createElement("p");
 
-      // 8. set the text content
+      // 11. set the text content
       normPokemonText.textContent = "Normal";
       shinyPokemonText.textContent = "Shiny";
 
-      // 9.  append the text to the divs created earlier
+      // 12. append the text to the divs created earlier containing the images
       normPokemonDiv.appendChild(normPokemonText);
       shinyPokemonDiv.appendChild(shinyPokemonText);
 
-      // 11. give the text container a class
+      // 13. give the text container (created earlier) a class of "text-container"
       textContainer.setAttribute("class", "text-container");
 
-      // 12. append the text container to the "pokemon display" container
+      // 14. append the text container to the "pokemon display" container
       let pokemonDisplay = document.getElementById("pokemon-display");
       pokemonDisplay.appendChild(textContainer);
 
-      // 13a. add a class for the h2 for styling
+      // 15. add a class for the h2 pokemon name (created earlier) for styling
       pokemonName.setAttribute("class", "pokemon-name");
       pokemonName.setAttribute("id", "pokemon-name");
 
-      // 14. set the pokemon name
+      // 16. set the pokemon name
       pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
 
-      // 15. append the name to the container
+      // 17. append the name to the container
       pokemonDisplay.prepend(pokemonName);
 
-      // 16. determine if the pokemon has 2 types, set it, then append it to the pokemon text-container element
+      // 18. determine if the pokemon has 2 types (type elements created earlier), set it, then append it to the pokemon text-container element
       if(pokemonData.types.length > 1) {
+        // 2 types
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
         textContainer.appendChild(pokemonType);
       } else {
+        // 1 type
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
         textContainer.appendChild(pokemonType);
       }
 
-      // 18. set the flavor text
+      // 19. set the flavor text (element created earlier)
       pokemonFlavorText.textContent = flavorText;
 
-      // 19. append the flavor text to the textContainer
+      // 20. append the flavor text to the textContainer
       textContainer.appendChild(pokemonFlavorText);
 
-      // 20. add "Search for another" text to form
+      // 21. add "Search for another" text to form
       let searchAnother = document.createElement("p");
       searchAnother.textContent = "Search for another";
       form.prepend(searchAnother);
     } else {
-      // if pikachu isn't there
-      alert("pikachu isn't there!");
-
+      // if data exists (pikachu's image isn't there and populated in the "if" statement), then just change the displayed data
       // change the image src and alt attributes
       normPokemonImg.setAttribute("src", pokemonDefault);
       normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
@@ -184,7 +150,7 @@ form.addEventListener("submit", async (event) => {
       pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
 
       // change the type
-      // 16. determine if the pokemon has 2 types, set it, then append it to the pokemon text-container element
+      // determine if the pokemon has 2 types, set it, then append it to the pokemon text-container element
       if(pokemonData.types.length > 1) {
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
       } else {
@@ -194,11 +160,43 @@ form.addEventListener("submit", async (event) => {
       // change the flavor text
       pokemonFlavorText.textContent = flavorText;
     }
-
-
-
   } catch (err) {
     console.log("Something went wrong.");
     console.log(err);
   };
 });
+
+
+
+// ---------- GSAP Animation reference ----------
+
+// --------- ANIMATION -------------
+    // ----- move form and pikachu disappear animation -----
+    // console.log("Flavor text", flavorText);
+    // form timeline
+    // tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
+    //   .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
+    //   .to("#pikachu-waving", {opacity: 0, duration: 1}, "<")
+    //   .to("#pikachu-waving", {display: "none"});
+
+    // ----------------------------------
+
+// greensock animation example
+// // use a script tag or an external JS file
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   // gsap code here!
+//   // alert("gsap loaded!");
+//   console.log("gsap loaded");
+//   // gsap.to("#hero-pikachu", {opacity: 0, duration: 1});
+
+//   // var tl = gsap.timeline();
+
+//   // pikachu timeline
+//   // tl.to("#hero-pikachu", {opacity: 0, duration: 1})
+//   //   .to("#hero-pikachu", {display: "none", duration: 0.5});
+
+//   // form timeline
+//   // tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
+//   //   .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
+//   //   .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
+// });
