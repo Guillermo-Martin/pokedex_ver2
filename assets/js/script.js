@@ -1,6 +1,9 @@
 console.log("connected!");
 var tl = gsap.timeline();
 
+// ---------- Variables ----------
+let capitalName = "";
+
 // ---------- Elements to create for displaying info ----------
 let normPokemonImg = document.createElement("img");
 let shinyPokemonImg = document.createElement("img");
@@ -8,6 +11,20 @@ let textContainer = document.createElement("div");
 let pokemonName = document.createElement("h2");
 let pokemonType = document.createElement("p");
 let pokemonFlavorText = document.createElement("p");
+
+// ---------- Functions ----------
+// add the rest of letters 
+let capitalize = (string) => {
+  // 1. capitalize the first letter of the string
+  capitalName = string[0].toUpperCase();
+
+  // 2. loop through the rest of the string and add it to the capitalized name
+  for(let i = 1; i < string.length; i++) {
+    capitalName = capitalName + string[i];
+  }
+
+  return capitalName;
+}
 
 // ---------- Form functionality ----------
 // target the form
@@ -48,6 +65,11 @@ form.addEventListener("submit", async (event) => {
     let pokemonDefault = pokemonData.sprites.front_default;
     let pokemonShiny = pokemonData.sprites.front_shiny;
 
+    // capitalize the name
+    capitalize(pokemonData.name);
+
+
+
     
 
     // ----- Displaying the data -----
@@ -76,11 +98,11 @@ form.addEventListener("submit", async (event) => {
 
       // 8. give the image elements (created earlier) src, alt, and class attributes
       normPokemonImg.setAttribute("src", pokemonDefault);
-      normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+      normPokemonImg.setAttribute("alt", `Normal version of ${capitalName}`);
       normPokemonImg.setAttribute("class", "pokemon-sprite");
 
       shinyPokemonImg.setAttribute("src", pokemonShiny);
-      shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+      shinyPokemonImg.setAttribute("alt", `Normal version of ${capitalName}`);
       shinyPokemonImg.setAttribute("class", "pokemon-sprite");
 
       // 9. append the image elements to the divs in the image container
@@ -111,7 +133,8 @@ form.addEventListener("submit", async (event) => {
       pokemonName.setAttribute("id", "pokemon-name");
 
       // 16. set the pokemon name
-      pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
+      // pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
+      pokemonName.textContent = `#${pokemonData.id} - ${capitalName}`;
 
       // 17. append the name to the container
       pokemonDisplay.prepend(pokemonName);
@@ -141,13 +164,13 @@ form.addEventListener("submit", async (event) => {
       // if data exists (pikachu's image isn't there and populated in the "if" statement), then just change the displayed data
       // change the image src and alt attributes
       normPokemonImg.setAttribute("src", pokemonDefault);
-      normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+      normPokemonImg.setAttribute("alt", `Normal version of ${capitalName}`);
 
       shinyPokemonImg.setAttribute("src", pokemonShiny);
-      shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+      shinyPokemonImg.setAttribute("alt", `Normal version of ${capitalName}`);
 
       // change the name
-      pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
+      pokemonName.textContent = `#${pokemonData.id} - ${capitalName}`;
 
       // change the type
       // determine if the pokemon has 2 types, set it, then append it to the pokemon text-container element
@@ -201,23 +224,4 @@ form.addEventListener("submit", async (event) => {
 //   //   .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
 // });
 
-let testName = "pikachu";
-let capitalName = "";
 
-// console.log(testName);
-
-
-// add the rest of letters 
-let capitalize = (string) => {
-  // 1. capitalize the first letter of the string
-  capitalName = string[0].toUpperCase();
-
-  // 2. loop through the rest of the string and add it to the capitalized name
-  for(let i = 1; i < string.length; i++) {
-    capitalName = capitalName + string[i];
-  }
-
-  console.log(capitalName);
-}
-
-capitalize(testName);
