@@ -158,7 +158,7 @@ form.addEventListener("submit", async (event) => {
       textContainer.appendChild(pokemonType);
     } else {
       // pokemonTypeElem.textContent = pokemonData.types[0].type.name;
-      pokemonType.textConent = `Type: ${pokemonData.types[0].type.name}`;
+      pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
       textContainer.appendChild(pokemonType);
     }
     
