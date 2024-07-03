@@ -145,7 +145,8 @@ form.addEventListener("submit", async (event) => {
     pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
 
     // 15. append the name to the container
-    textContainer.appendChild(pokemonName);
+    // textContainer.appendChild(pokemonName);
+    pokemonDisplay.prepend(pokemonName);
 
     // 16. create a p element for the pokemon type(s)
     let pokemonType = document.createElement("p");
