@@ -92,49 +92,54 @@ form.addEventListener("submit", async (event) => {
     if(pikachuWaving) {
       alert("pikachu is there!");
       pikachuWaving.remove();
+
+      // 2. create 2 divs to go into the pokemon display image container
+      let normPokemonDiv = document.createElement("div");
+      let shinyPokemonDiv = document.createElement("div");
+
+      // 2a. give the divs a class of "sprite-container"
+      normPokemonDiv.setAttribute("class", "sprite-container");
+      shinyPokemonDiv.setAttribute("class", "sprite-container");
+
+      // 3. append the 2 divs to the pokemon display image container
+      imageDisplay.appendChild(normPokemonDiv);
+      imageDisplay.appendChild(shinyPokemonDiv);
+
+      // 4. create 2 image elements
+      let normPokemonImg = document.createElement("img");
+      let shinyPokemonImg = document.createElement("img");
+
+      // 5. give the image elements src, alt, and class attributes
+      normPokemonImg.setAttribute("src", pokemonDefault);
+      normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+      normPokemonImg.setAttribute("class", "pokemon-sprite");
+
+      shinyPokemonImg.setAttribute("src", pokemonShiny);
+      shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+      shinyPokemonImg.setAttribute("class", "pokemon-sprite");
+
+      // 6. append the image elements to the divs in the image container
+      normPokemonDiv.appendChild(normPokemonImg);
+      shinyPokemonDiv.appendChild(shinyPokemonImg);
+
+       // 7. create p elements
+      let normPokemonText = document.createElement("p");
+      let shinyPokemonText = document.createElement("p");
+
+      // 8. set the text content
+      normPokemonText.textContent = "Normal";
+      shinyPokemonText.textContent = "Shiny";
+
+      // 9.  append the text to the divs created earlier
+      normPokemonDiv.appendChild(normPokemonText);
+      shinyPokemonDiv.appendChild(shinyPokemonText);
     }
-    
 
-    // 2. create 2 divs to go into the pokemon display image container
-    let normPokemonDiv = document.createElement("div");
-    let shinyPokemonDiv = document.createElement("div");
 
-    // 2a. give the divs a class of "sprite-container"
-    normPokemonDiv.setAttribute("class", "sprite-container");
-    shinyPokemonDiv.setAttribute("class", "sprite-container");
 
-    // 3. append the 2 divs to the pokemon display image container
-    imageDisplay.appendChild(normPokemonDiv);
-    imageDisplay.appendChild(shinyPokemonDiv);
 
-    // 4. create 2 image elements
-    let normPokemonImg = document.createElement("img");
-    let shinyPokemonImg = document.createElement("img");
 
-    // 5. give the image elements src, alt, and class attributes
-    normPokemonImg.setAttribute("src", pokemonDefault);
-    normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
-    normPokemonImg.setAttribute("class", "pokemon-sprite");
 
-    shinyPokemonImg.setAttribute("src", pokemonShiny);
-    shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
-    shinyPokemonImg.setAttribute("class", "pokemon-sprite");
-
-    // 6. append the image elements to the divs in the image container
-    normPokemonDiv.appendChild(normPokemonImg);
-    shinyPokemonDiv.appendChild(shinyPokemonImg);
-
-    // 7. create p elements
-    let normPokemonText = document.createElement("p");
-    let shinyPokemonText = document.createElement("p");
-
-    // 8. set the text content
-    normPokemonText.textContent = "Normal";
-    shinyPokemonText.textContent = "Shiny";
-
-    // 9.  append the text to the divs created earlier
-    normPokemonDiv.appendChild(normPokemonText);
-    shinyPokemonDiv.appendChild(shinyPokemonText);
 
     // 10.  create a div with the class of "text-container"
     let textContainer = document.createElement("div");
