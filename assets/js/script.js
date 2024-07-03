@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
   //   .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
 });
 
+
+let normPokemonImg = document.createElement("img");
+let shinyPokemonImg = document.createElement("img");
+
 // if(document.getElementById("pikachu-waving")) {
 //   console.log("pikachu is there!");
 // }
@@ -106,8 +110,8 @@ form.addEventListener("submit", async (event) => {
       imageDisplay.appendChild(shinyPokemonDiv);
 
       // 4. create 2 image elements
-      let normPokemonImg = document.createElement("img");
-      let shinyPokemonImg = document.createElement("img");
+      // let normPokemonImg = document.createElement("img");
+      // let shinyPokemonImg = document.createElement("img");
 
       // 5. give the image elements src, alt, and class attributes
       normPokemonImg.setAttribute("src", pokemonDefault);
@@ -133,6 +137,22 @@ form.addEventListener("submit", async (event) => {
       // 9.  append the text to the divs created earlier
       normPokemonDiv.appendChild(normPokemonText);
       shinyPokemonDiv.appendChild(shinyPokemonText);
+    } else {
+      // if pikachu isn't there
+      alert("pikachu isn't there!");
+
+      // if(normPokemonImg) {
+      //   alert("normal pokemon image is here!")
+      // } else {
+      //   alert("normal pokemon img isn't there!")
+      // }
+
+      // change the image src and alt attributes
+      normPokemonImg.setAttribute("src", pokemonDefault);
+      normPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
+
+      shinyPokemonImg.setAttribute("src", pokemonShiny);
+      shinyPokemonImg.setAttribute("alt", `Normal version of ${pokemonData.name}`);
     }
 
 
