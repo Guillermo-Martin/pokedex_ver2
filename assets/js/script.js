@@ -183,6 +183,10 @@ form.addEventListener("submit", async (event) => {
       // 19. append the flavor text to the textContainer
       textContainer.appendChild(pokemonFlavorText);
 
+      // 20. add "Search for another" text to form
+      let searchAnother = document.createElement("p");
+      searchAnother.textContent = "Search for another";
+      form.prepend(searchAnother);
 
     } else {
       // if pikachu isn't there
@@ -247,9 +251,9 @@ form.addEventListener("submit", async (event) => {
     // textContainer.appendChild(pokemonFlavorText);
 
     // 20. add "Search for another" text to form
-    let searchAnother = document.createElement("p");
-    searchAnother.textContent = "Search for another";
-    form.prepend(searchAnother);
+    // let searchAnother = document.createElement("p");
+    // searchAnother.textContent = "Search for another";
+    // form.prepend(searchAnother);
 
 
     
