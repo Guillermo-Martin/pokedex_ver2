@@ -99,9 +99,6 @@ form.addEventListener("submit", async (event) => {
     imageDisplay.appendChild(normPokemonDiv);
     imageDisplay.appendChild(shinyPokemonDiv);
 
-   
-
-
     // 4. create 2 image elements
     let normPokemonImg = document.createElement("img");
     let shinyPokemonImg = document.createElement("img");
@@ -131,6 +128,24 @@ form.addEventListener("submit", async (event) => {
     normPokemonDiv.appendChild(normPokemonText);
     shinyPokemonDiv.appendChild(shinyPokemonText);
 
+    // 10.  create a div with the class of "text-container"
+    let textContainer = document.createElement("div");
+
+    // 11. give the text container a class
+    textContainer.setAttribute("class", "text-container");
+
+    // 12. append the text container to the "pokemon display" container
+    let pokemonDisplay = document.getElementById("pokemon-display");
+    pokemonDisplay.appendChild(textContainer);
+
+    // 13. create an h2 for the pokemon name and number
+    let pokemonName = document.createElement("h2");
+
+    // 14. set the pokemon name
+    pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
+
+    // 14. append the name to the container
+    textContainer.appendChild(pokemonName);
 
     // imageDisplay.appendChild(normPokemonImg);
     // imageDisplay.appendChild(shinyPokemonImg);
@@ -157,8 +172,8 @@ form.addEventListener("submit", async (event) => {
 
 
     // get the copy
-    let pokemonName = pokemonData.name;
-    let pokemonNum = pokemonData.id;
+    // let pokemonName = pokemonData.name;
+    // let pokemonNum = pokemonData.id;
 
     // console.log(pokemonData.types);
 
