@@ -154,6 +154,7 @@ form.addEventListener("submit", async (event) => {
       }
 
       // 19. set the flavor text (element created earlier)
+      pokemonFlavorText.setAttribute("class", "flavor-text");
       pokemonFlavorText.textContent = flavorText;
 
       // 20. append the flavor text to the textContainer
