@@ -130,6 +130,10 @@ label[for="searchInput"] {
   margin-bottom: 4px;
 }
 
+label.error {
+  color: red;
+}
+
 #searchInput, button {
   font-family: "Reem Kufi Fun", "Lato", "Roboto", sans-serif;
 }

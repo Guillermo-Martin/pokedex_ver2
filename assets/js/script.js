@@ -189,8 +189,12 @@ form.addEventListener("submit", async (event) => {
       pokemonFlavorText.textContent = flavorText;
     }
   } catch (err) {
-    console.log("Something went wrong.");
     console.log(err);
+
+    // change form label into an error message
+    let searchInput = document.getElementById("search-input");
+    searchInput.setAttribute("class", "error");
+    searchInput.textContent = "We can't find that Pokémon.  Please try again."
   };
 });
 
