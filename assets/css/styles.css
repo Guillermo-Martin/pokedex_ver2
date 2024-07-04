@@ -19,7 +19,10 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 16px;
+  /* padding: 16px; */
+  padding-left: 16px;
+  padding-right: 16px;
+  /* overflow: hidden; */
 }
 
 .main-content {
@@ -29,6 +32,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%); */
   width: 100%;
+  z-index: 1;
 }
 
 /* ---------- Hero ---------- */
@@ -176,9 +180,28 @@ button[type="submit"]:hover {
   margin-bottom: 0;
 }
 
+
+/* ---------- Rectangles for type colors ---------- */
+.type-color-1 {
+  background-color: yellow;
+  width: 500px;
+  height: 500px;
+  position: fixed;
+  left: 32%;
+  top: -33%;
+  transform: rotate(38deg);
+}
+
+.type-color-2 {
+  background-color: blue;
+  width: 500px;
+  height: 500px;
+  position: fixed;
+  bottom: -33%;
+  right: 32%;
+  transform: rotate(38deg);
+}
+
 /* ****** NEXT STEPS ****** */
 /* START WITH MOBILE */
-/* 1. X style h1 and subheader */
-/* 2. X Add image of pikachu */
-/* 3. Style form */
 /* 4. Add info on breakpoints */
