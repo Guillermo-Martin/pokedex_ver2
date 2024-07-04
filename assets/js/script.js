@@ -12,6 +12,9 @@ let pokemonName = document.createElement("h2");
 let pokemonType = document.createElement("p");
 let pokemonFlavorText = document.createElement("p");
 
+// ---------- Other elements ----------
+let searchLabel = document.getElementById("search-label");
+
 // ---------- Functions ----------
 // add the rest of letters 
 let capitalize = (string) => {
@@ -68,9 +71,11 @@ form.addEventListener("submit", async (event) => {
     // capitalize the name
     capitalize(pokemonData.name);
 
-
-
-    
+    // check if there's an error message. if there is, change it back to default text
+    if(searchLabel.textContent === "We can't find that Pokémon.  Please try again.") {
+      searchLabel.textContent = "Enter a Pokémon below, then tap on “I choose you!”";
+      searchLabel.setAttribute("class", "");
+    }
 
     // ----- Displaying the data -----
     // 1. target the image display
@@ -192,9 +197,9 @@ form.addEventListener("submit", async (event) => {
     console.log(err);
 
     // change form label into an error message
-    let searchInput = document.getElementById("search-input");
-    searchInput.setAttribute("class", "error");
-    searchInput.textContent = "We can't find that Pokémon.  Please try again."
+    
+    searchLabel.setAttribute("class", "error");
+    searchLabel.textContent = "We can't find that Pokémon.  Please try again."
   };
 });
 
