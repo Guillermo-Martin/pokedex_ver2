@@ -161,6 +161,7 @@ form.addEventListener("submit", async (event) => {
 
       // 21. add "Search for another" text to form
       let searchAnother = document.createElement("p");
+      searchAnother.setAttribute("class", "search-another");
       searchAnother.textContent = "Search for another";
       form.prepend(searchAnother);
     } else {
