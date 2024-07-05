@@ -8,6 +8,14 @@
   font-style: normal;
 } */
 
+/* breakpoints */
+	/* --sm-mobile: 320px;
+	--lg-mobile: 576px;
+	--sm-tablet: 767px;
+	--lg-tablet: 992px;
+	--sm-desktop: 1200px;
+	--lg-desktop: 1400px; */
+
 body {
   font-family: "Reem Kufi Fun", "Lato", "Roboto", sans-serif;
   /* font-optical-sizing: auto; */
