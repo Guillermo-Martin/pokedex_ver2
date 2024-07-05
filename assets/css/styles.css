@@ -219,3 +219,32 @@ button[type="submit"]:hover {
     width: 1000px;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: unset;
+    align-items: center;
+  }
+
+  .image-container-desktop {
+    width: 50%;
+    border: 3px solid red;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin: 0 auto;
+  }
+
+  #pikachu-waving-desktop {
+    width: 100%;
+  }
+
+  /* pokemon display */
+  #pokemon-display {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+  }
+}
