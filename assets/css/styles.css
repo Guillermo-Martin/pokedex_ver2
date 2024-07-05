@@ -230,7 +230,7 @@ button[type="submit"]:hover {
 
   .image-container-desktop {
     width: 50%;
-    border: 3px solid red;
+    /* border: 3px solid red; */
     /* display: flex;
     align-items: center;
     justify-content: center; */
@@ -246,5 +246,13 @@ button[type="submit"]:hover {
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 2;
+  }
+
+  #pikachu-waving {
+    display: none;
+  }
+
+  .type-color-1 {
+    background-color: #f04038;
   }
 }

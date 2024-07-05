@@ -1,6 +1,10 @@
 console.log("connected!");
 var tl = gsap.timeline();
 
+console.log(window.innerWidth);
+
+
+
 // ---------- Variables ----------
 let capitalName = "";
 let typeColors = {
@@ -36,6 +40,7 @@ let pokemonFlavorText = document.createElement("p");
 let searchLabel = document.getElementById("search-label");
 let typeColor1 = document.querySelector(".type-color-1");
 let typeColor2 = document.querySelector(".type-color-2");
+let pikachuWaving = document.getElementById("pikachu-waving");
 
 // ---------- Functions ----------
 // add the rest of letters 
@@ -50,6 +55,12 @@ let capitalize = (string) => {
 
   return capitalName;
 }
+
+// ---------- Check screen width for pikachu ----------
+// if(window.innerWidth >= 992) {
+//   pikachuWaving.setAttribute("src", "");
+//   pikachuWaving.setAttribute("alt", "");
+// }
 
 // ---------- Form functionality ----------
 // target the form
