@@ -278,14 +278,15 @@ button[type="submit"]:hover {
   /* type color rectangles */
   .type-color-1 {
     background-color: #f04038;
-    top: -32%;
+    top: -16%;
     opacity: 1;
+    width: 2000px;
   }
 
   .type-color-2 {
-    bottom: -30%;
+    bottom: 20%;
     right: -10%;
-    height: 700px;
-    width: 1500px;
+    height: 1000px;
+    width: 3000px;
   }
 }
