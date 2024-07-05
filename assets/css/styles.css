@@ -279,6 +279,7 @@ button[type="submit"]:hover {
   .type-color-1 {
     background-color: #f04038;
     top: -32%;
+    opacity: 1;
   }
 
   .type-color-2 {

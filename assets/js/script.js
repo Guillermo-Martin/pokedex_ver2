@@ -188,6 +188,7 @@ form.addEventListener("submit", async (event) => {
 
         // change rectangle colors
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
+        typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[1].type.name];
       } else {
         // 1 type
@@ -196,6 +197,7 @@ form.addEventListener("submit", async (event) => {
 
         // change rectangle colors
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
+        typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
       }
 
@@ -234,12 +236,14 @@ form.addEventListener("submit", async (event) => {
         
         // change rectangle colors
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
+        typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[1].type.name];
       } else {
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
 
         // change rectangle colors
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
+        typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
       }
 
