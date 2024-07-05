@@ -213,6 +213,15 @@ form.addEventListener("submit", async (event) => {
       searchAnother.setAttribute("class", "search-another");
       searchAnother.textContent = "Search for another";
       form.prepend(searchAnother);
+
+      // ---------- Pokemon jump animation ----------
+      let spriteArr = document.querySelectorAll(".pokemon-sprite");
+
+      for(let i = 0; i < spriteArr.length; i++) {
+        spriteArr[i].addEventListener("click", () => {
+          alert("you clicked me!");
+        });
+      };
     } else {
       // if data exists (pikachu's image isn't there and populated in the "if" statement), then just change the displayed data
       // change the image src and alt attributes
