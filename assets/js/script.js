@@ -219,7 +219,11 @@ form.addEventListener("submit", async (event) => {
 
       for(let i = 0; i < spriteArr.length; i++) {
         spriteArr[i].addEventListener("click", () => {
-          alert("you clicked me!");
+          // alert("you clicked me!");
+
+          gsap.timeline({repeat: 2})
+            .to(spriteArr[i], {y: -10, duration: 0.1})
+            .to(spriteArr[i], {y: 0, duration: 0.1});
         });
       };
     } else {
