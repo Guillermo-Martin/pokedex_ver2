@@ -234,6 +234,18 @@ button[type="submit"]:hover {
     grid-column-gap: 64px;
   }
 
+  .subheader {
+    margin-bottom: 20px;
+  }
+
+  /* h1 {
+    text-align: left;
+  }
+
+  .subheader {
+    text-align: left;
+  } */
+
   /* waving pikachu will stay and not be used for displaying results */
   .image-container-desktop {
     width: 50%;
@@ -284,9 +296,23 @@ button[type="submit"]:hover {
   }
 
   .type-color-2 {
-    bottom: 20%;
-    right: -10%;
+    bottom: 0;
+    right: 10%;
     height: 1000px;
     width: 3000px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  h1, .subheader {
+    text-align: left;
+  }
+
+  .main-content {
+    grid-column-gap: 88px;
+  }
+
+  .type-color-2 {
+    right: 24%;
   }
 }
