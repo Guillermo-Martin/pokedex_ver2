@@ -68,6 +68,11 @@ h1 {
 }
 
 /* ---------- Pokemon display ---------- */
+/* hide desktop version of pikachu */
+.image-container-desktop {
+  display: none;
+}
+
 .pokemon-display .image-container {
   margin: 0 auto;
   margin-bottom: 20px;
@@ -248,6 +253,7 @@ button[type="submit"]:hover {
 
   /* waving pikachu will stay and not be used for displaying results */
   .image-container-desktop {
+    display: block;
     width: 50%;
     /* border: 3px solid red; */
     /* display: flex;
@@ -290,7 +296,7 @@ button[type="submit"]:hover {
   /* type color rectangles */
   .type-color-1 {
     background-color: #f04038;
-    top: -16%;
+    top: 2%;
     opacity: 1;
     width: 2000px;
   }
@@ -310,6 +316,10 @@ button[type="submit"]:hover {
 
   .main-content {
     grid-column-gap: 88px;
+  }
+
+  .type-color-1 {
+    top: -8%;
   }
 
   .type-color-2 {
