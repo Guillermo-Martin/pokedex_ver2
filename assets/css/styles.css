@@ -221,12 +221,17 @@ button[type="submit"]:hover {
 }
 
 @media only screen and (min-width: 992px) {
+  body {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
   .main-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: unset;
     align-items: center;
-    grid-column-gap: 32px;
+    grid-column-gap: 64px;
   }
 
   .image-container-desktop {
@@ -248,6 +253,10 @@ button[type="submit"]:hover {
     grid-row-end: 3;
     grid-column-start: 2;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   #pokemon-display .text-container {
