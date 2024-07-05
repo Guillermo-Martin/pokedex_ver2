@@ -213,6 +213,9 @@ button[type="submit"]:hover {
   opacity: 0.5;
 }
 
-/* ****** NEXT STEPS ****** */
-/* START WITH MOBILE */
-/* 4. Add info on breakpoints */
+/* ---------- Media queries ---------- */
+@media only screen and (min-width: 576px) {
+  .type-color-1, .type-color-2 {
+    width: 1000px;
+  }
+}
