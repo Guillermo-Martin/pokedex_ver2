@@ -234,6 +234,7 @@ button[type="submit"]:hover {
     grid-column-gap: 64px;
   }
 
+  /* waving pikachu will stay and not be used for displaying results */
   .image-container-desktop {
     width: 50%;
     /* border: 3px solid red; */
@@ -263,16 +264,27 @@ button[type="submit"]:hover {
     margin-bottom: 0;
   }
 
+  /* pikachu waving (for mobile versions) */
   #pikachu-waving {
     display: none;
   }
 
-  .type-color-1 {
-    background-color: #f04038;
-  }
-
+  /* form */
   #form {
     min-height: 156px;
     justify-content: end;
+  }
+
+  /* type color rectangles */
+  .type-color-1 {
+    background-color: #f04038;
+    top: -32%;
+  }
+
+  .type-color-2 {
+    bottom: -30%;
+    right: -10%;
+    height: 700px;
+    width: 1500px;
   }
 }
