@@ -226,6 +226,7 @@ button[type="submit"]:hover {
     grid-template-columns: 1fr 1fr;
     max-width: unset;
     align-items: center;
+    grid-column-gap: 32px;
   }
 
   .image-container-desktop {
@@ -246,6 +247,11 @@ button[type="submit"]:hover {
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 2;
+    height: 100%;
+  }
+
+  #pokemon-display .text-container {
+    margin-bottom: 0;
   }
 
   #pikachu-waving {
@@ -254,5 +260,10 @@ button[type="submit"]:hover {
 
   .type-color-1 {
     background-color: #f04038;
+  }
+
+  #form {
+    min-height: 156px;
+    justify-content: end;
   }
 }
