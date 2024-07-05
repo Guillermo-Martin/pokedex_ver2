@@ -3,6 +3,26 @@ var tl = gsap.timeline();
 
 // ---------- Variables ----------
 let capitalName = "";
+let typeColors = {
+  normal: '#a8a77a',
+	fire: '#ee8130',
+	water: '#6390f0',
+	electric: '#f7d02c',
+	grass: '#7ac74c',
+	ice: '#96d9d6',
+	fighting: '#c22e28',
+	poison: '#a33ea1',
+	ground: '#e2bf65',
+	flying: '#a98ff3',
+	psychic: '#f95587',
+	bug: '#a6b91a',
+	rock: '#b6a136',
+	ghost: '#735797',
+	dragon: '#6f35fc',
+	dark: '#705746',
+	steel: '#b7b7ce',
+	fairy: '#d685ad',
+}
 
 // ---------- Elements to create for displaying info ----------
 let normPokemonImg = document.createElement("img");
@@ -14,6 +34,8 @@ let pokemonFlavorText = document.createElement("p");
 
 // ---------- Other elements ----------
 let searchLabel = document.getElementById("search-label");
+let typeColor1 = document.querySelector(".type-color-1");
+let typeColor2 = document.querySelector(".type-color-2");
 
 // ---------- Functions ----------
 // add the rest of letters 
@@ -152,10 +174,18 @@ form.addEventListener("submit", async (event) => {
         // 2 types
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
         textContainer.appendChild(pokemonType);
+
+        // change rectangle colors
+        typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
+        typeColor2.style.backgroundColor = typeColors[pokemonData.types[1].type.name];
       } else {
         // 1 type
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
         textContainer.appendChild(pokemonType);
+
+        // change rectangle colors
+        typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
+        typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
       }
 
       // 19. set the flavor text (element created earlier)
@@ -186,8 +216,20 @@ form.addEventListener("submit", async (event) => {
       // determine if the pokemon has 2 types, set it, then append it to the pokemon text-container element
       if(pokemonData.types.length > 1) {
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
+        
+        // testing
+        // console.log(typeColors[pokemonData.types[0].type.name])
+        // console.log(typeColors[pokemonData.types[1].type.name])
+        
+        // change rectangle colors
+        typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
+        typeColor2.style.backgroundColor = typeColors[pokemonData.types[1].type.name];
       } else {
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
+
+        // change rectangle colors
+        typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
+        typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
       }
 
       // change the flavor text
@@ -239,3 +281,5 @@ form.addEventListener("submit", async (event) => {
 // });
 
 
+// X get all the type colors
+// set type 1 to the type 1 color
