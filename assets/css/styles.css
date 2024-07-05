@@ -229,7 +229,7 @@ button[type="submit"]:hover {
   .main-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: unset;
+    max-width: 1100px;
     align-items: center;
     grid-column-gap: 64px;
   }
