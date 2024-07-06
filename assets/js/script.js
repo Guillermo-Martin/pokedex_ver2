@@ -281,11 +281,29 @@ form.addEventListener("submit", async (event) => {
 
       for(let i = 0; i < spriteArr.length; i++) {
         spriteArr[i].addEventListener("click", () => {
+      
+          // Fixing the play promise error:  https://developer.chrome.com/blog/play-request-was-interrupted
+          let playPromise = audio.play();
           
+          console.log(playPromise);
+          console.log(!playPromise);
 
-          if(audio) {
-            audio.setAttribute("src", pokemonCry);
-          }
+          // if "playPromise" doesn't equal undefined...
+          if(playPromise !== undefined) {
+            playPromise.then(() => {
+              // ...then pause any audio that is playing
+              audio.pause();
+
+              // change the srce of the sound
+              audio.setAttribute("src", pokemonCry);
+
+              // then play the audio
+              audio.play();
+            })
+            .catch(err => {
+              console.log(err);
+            });
+          };
           
           // audio.setAttribute("src", pokemonCry);
           
@@ -294,7 +312,7 @@ form.addEventListener("submit", async (event) => {
 
           // let audioElem = document.get 
 
-          audio.play();
+          
 
           gsap.timeline({repeat: 2})
             .to(spriteArr[i], {y: -10, duration: 0.1})
