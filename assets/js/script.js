@@ -41,6 +41,7 @@ let searchLabel = document.getElementById("search-label");
 let typeColor1 = document.querySelector(".type-color-1");
 let typeColor2 = document.querySelector(".type-color-2");
 let pikachuWaving = document.getElementById("pikachu-waving");
+let audio = "";
 
 // ---------- Functions ----------
 // add the rest of letters 
@@ -82,7 +83,7 @@ form.addEventListener("submit", async (event) => {
     let pokemonData = await response.json();
 
     // see data
-    // console.log(pokemonData);
+    console.log(pokemonData.cries.latest);
 
     // get additional data:  flavor text
     // using the retrieved data, make API request to get the flavor text, and parse data as JSON
@@ -100,6 +101,9 @@ form.addEventListener("submit", async (event) => {
     // get the images (default and shiny)
     let pokemonDefault = pokemonData.sprites.front_default;
     let pokemonShiny = pokemonData.sprites.front_shiny;
+
+    // get the sound
+    let pokemonCry = pokemonData.cries.latest;
 
     // capitalize the name
     capitalize(pokemonData.name);
@@ -214,13 +218,22 @@ form.addEventListener("submit", async (event) => {
       searchAnother.textContent = "Search for another";
       form.prepend(searchAnother);
 
-      // ---------- Pokemon jump animation ----------
+      // ---------- Pokemon jump animation and play sound ----------
       let spriteArr = document.querySelectorAll(".pokemon-sprite");
 
       for(let i = 0; i < spriteArr.length; i++) {
         spriteArr[i].addEventListener("click", () => {
-          // alert("you clicked me!");
+          // https://stackoverflow.com/questions/9419263/how-to-play-audio
+          // create a new audio object
+          audio = new Audio(`${pokemonCry}`);
 
+          // set an id, so you can target it in subsequent searches
+          audio.setAttribute("id", "pokemonCry");
+
+          // play pokemon cry
+          audio.play();
+
+          // play bounce animation
           gsap.timeline({repeat: 2})
             .to(spriteArr[i], {y: -10, duration: 0.1})
             .to(spriteArr[i], {y: 0, duration: 0.1});
@@ -262,6 +275,32 @@ form.addEventListener("submit", async (event) => {
 
       // change the flavor text
       pokemonFlavorText.textContent = flavorText;
+
+      // ---------- Pokemon jump animation and play sound----------
+      let spriteArr = document.querySelectorAll(".pokemon-sprite");
+
+      for(let i = 0; i < spriteArr.length; i++) {
+        spriteArr[i].addEventListener("click", () => {
+          
+
+          if(audio) {
+            audio.setAttribute("src", pokemonCry);
+          }
+          
+          // audio.setAttribute("src", pokemonCry);
+          
+
+          // console.log(audio);
+
+          // let audioElem = document.get 
+
+          audio.play();
+
+          gsap.timeline({repeat: 2})
+            .to(spriteArr[i], {y: -10, duration: 0.1})
+            .to(spriteArr[i], {y: 0, duration: 0.1});
+        });
+      };
     }
   } catch (err) {
     console.log(err);
