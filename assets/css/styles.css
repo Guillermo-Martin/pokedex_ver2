@@ -327,3 +327,17 @@ button[type="submit"]:hover {
     right: 24%;
   }
 }
+
+@media only screen and (min-width: 1700px) {
+  .type-color-1 {
+    width: 100%;
+    top: -20%;
+  }
+
+  .type-color-2 {
+    right: 32%;
+    width: 150%;
+    height: 75%;
+    bottom: -25%;
+  }
+}
