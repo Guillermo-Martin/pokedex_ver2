@@ -130,12 +130,13 @@ form.addEventListener("submit", async (event) => {
       pikachuWaving.remove();
 
       // rectangle animation
-      // gsap.to(".type-color-1", {scaleX: 0, duration: 1});
+      // rectangle 1
       gsap.timeline()
-        .to(".type-color-1", {opacity: 0, duration: 0.2})
-        .to(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%", duration: 0.2})
+        .set(".type-color-1", {opacity: 0})
+        .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
         .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
 
+      // rectangle 2
       gsap.timeline()
         .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
         .to(".type-color-2", {scaleX: 1, duration: 0.2})
@@ -216,6 +217,8 @@ form.addEventListener("submit", async (event) => {
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
         textContainer.appendChild(pokemonType);
 
+        
+
         // change rectangle colors
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
         typeColor1.style.opacity = 0.5;
@@ -273,6 +276,18 @@ form.addEventListener("submit", async (event) => {
       if(pokemonData.types.length > 1) {
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
         
+        // rectangle animation
+      // rectangle 1
+      gsap.timeline()
+        .set(".type-color-1", {opacity: 0})
+        .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
+        .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
+
+      // rectangle 2
+      gsap.timeline()
+        .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
+        .to(".type-color-2", {scaleX: 1, duration: 0.2})
+
         // testing
         // console.log(typeColors[pokemonData.types[0].type.name])
         // console.log(typeColors[pokemonData.types[1].type.name])
