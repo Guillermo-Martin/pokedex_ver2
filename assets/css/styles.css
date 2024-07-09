@@ -206,8 +206,8 @@ button[type="submit"]:hover {
   top: -26%; */
   transform: rotate(38deg);
   opacity: 0.5;
-  right: 72%;
-  bottom: -24%;
+  right: 100%;
+  bottom: -14%;
 }
 
 .type-color-2 {
@@ -229,7 +229,9 @@ button[type="submit"]:hover {
   }
 
   .type-color-1 {
-    bottom: -8%;
+    /* bottom: -8%; */
+    bottom: -2%;
+    right: 81%;
   }
 
   .type-color-2 {
@@ -312,8 +314,8 @@ button[type="submit"]:hover {
     opacity: 1;
     width: 2000px;
     /* top: -20%; */
-    bottom: 67%;
-    left: 25%;
+    bottom: 120%;
+    right: -38%;
 
   }
 
@@ -336,7 +338,15 @@ button[type="submit"]:hover {
 
   .type-color-1 {
     /* top: -8%; */
-    left: 24%;
+    /* left: 24%; */
+    /* bottom: 89%;
+    left: 10%; */
+    /* width: 3000px;
+    right: -75%;
+    bottom: 100%; */
+    width: 136%;
+    bottom: 103%;
+    right: -28%;
   }
 
   .type-color-2 {
@@ -350,9 +360,9 @@ button[type="submit"]:hover {
 
 @media only screen and (min-width: 1700px) {
   .type-color-1 {
-    width: 100%;
+    /* width: 100%; */
     /* top: -20%; */
-    left: 42%;
+    /* left: 42%; */
   }
 
   .type-color-2 {

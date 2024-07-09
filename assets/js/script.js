@@ -65,9 +65,10 @@ let capitalize = (string) => {
 let typeColorAnimation = tl
   // .set(".type-color-1", {opacity: 0})
   .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"}, "<")
+  // .set(".type-color-1", {scaleX: 0, transformOrigin: "33% 132%"}, "<")
   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"}, "<")
-  .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.4}, "<")
-  .to(".type-color-2", {scaleX: 1, duration: 0.4}, "<")
+  .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 4}, "<")
+  .to(".type-color-2", {scaleX: 1, duration: 0.2}, "<")
   .pause();
 
 // ---------- Check screen width for pikachu ----------
