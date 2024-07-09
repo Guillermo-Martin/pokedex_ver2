@@ -67,8 +67,8 @@ let typeColorAnimation = tl
   .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"}, "<")
   // .set(".type-color-1", {scaleX: 0, transformOrigin: "33% 132%"}, "<")
   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"}, "<")
-  .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 4}, "<")
-  .to(".type-color-2", {scaleX: 1, duration: 0.2}, "<")
+  .to(".type-color-1", {scaleX: 1, opacity: 0.5, ease: "power4.out", duration: 1, delay: 0.3}, "<")
+  .to(".type-color-2", {scaleX: 1, ease: "power4.out", duration: 1}, "<")
   .pause();
 
 // ---------- Check screen width for pikachu ----------
