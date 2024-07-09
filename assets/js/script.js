@@ -223,6 +223,18 @@ form.addEventListener("submit", async (event) => {
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
         typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
+
+        // rectangle animation
+      // rectangle 1
+      gsap.timeline()
+      .set(".type-color-1", {opacity: 0})
+      .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
+      .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
+
+      // rectangle 2
+      gsap.timeline()
+        .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
+        .to(".type-color-2", {scaleX: 1, duration: 0.2})
       }
 
       // 19. set the flavor text (element created earlier)
@@ -303,7 +315,19 @@ form.addEventListener("submit", async (event) => {
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
         typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
-      }
+
+        // rectangle animation
+      // rectangle 1
+      gsap.timeline()
+      .set(".type-color-1", {opacity: 0})
+      .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
+      .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
+
+      // rectangle 2
+      gsap.timeline()
+        .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
+        .to(".type-color-2", {scaleX: 1, duration: 0.2})
+        }
 
       // change the flavor text
       pokemonFlavorText.textContent = flavorText;
