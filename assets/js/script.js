@@ -60,6 +60,16 @@ let capitalize = (string) => {
   return capitalName;
 }
 
+
+// ---------- animaiton
+let typeColorAnimation = tl
+  // .set(".type-color-1", {opacity: 0})
+  .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"}, "<")
+  .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"}, "<")
+  .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.4}, "<")
+  .to(".type-color-2", {scaleX: 1, duration: 0.4}, "<")
+  .pause();
+
 // ---------- Check screen width for pikachu ----------
 // if(window.innerWidth >= 992) {
 //   pikachuWaving.setAttribute("src", "");
@@ -131,15 +141,17 @@ form.addEventListener("submit", async (event) => {
 
       // rectangle animation
       // rectangle 1
-      gsap.timeline()
-        .set(".type-color-1", {opacity: 0})
-        .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
-        .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
+      // gsap.timeline()
+      //   .set(".type-color-1", {opacity: 0})
+      //   .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
+      //   .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
 
       // rectangle 2
-      gsap.timeline()
-        .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
-        .to(".type-color-2", {scaleX: 1, duration: 0.2})
+      // gsap.timeline()
+      //   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
+      //   .to(".type-color-2", {scaleX: 1, duration: 0.2})
+
+      typeColorAnimation.play();
       
 
       // 5. create 2 divs to go into the pokemon display image container
@@ -226,16 +238,19 @@ form.addEventListener("submit", async (event) => {
 
         // rectangle animation
       // rectangle 1
-      gsap.timeline()
-      .set(".type-color-1", {opacity: 0})
-      .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
-      .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
+      // gsap.timeline()
+      // .set(".type-color-1", {opacity: 0})
+      // .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
+      // .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
 
       // rectangle 2
-      gsap.timeline()
-        .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
-        .to(".type-color-2", {scaleX: 1, duration: 0.2})
+      // gsap.timeline()
+      //   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
+      //   .to(".type-color-2", {scaleX: 1, duration: 0.2})
+      typeColorAnimation.play();
       }
+
+      
 
       // 19. set the flavor text (element created earlier)
       pokemonFlavorText.setAttribute("class", "flavor-text");
@@ -290,15 +305,17 @@ form.addEventListener("submit", async (event) => {
         
         // rectangle animation
       // rectangle 1
-      gsap.timeline()
-        .set(".type-color-1", {opacity: 0})
-        .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
-        .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
+      // gsap.timeline()
+      //   .set(".type-color-1", {opacity: 0})
+      //   .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
+      //   .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
 
       // rectangle 2
-      gsap.timeline()
-        .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
-        .to(".type-color-2", {scaleX: 1, duration: 0.2})
+      // gsap.timeline()
+      //   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
+      //   .to(".type-color-2", {scaleX: 1, duration: 0.2})
+
+      typeColorAnimation.restart();
 
         // testing
         // console.log(typeColors[pokemonData.types[0].type.name])
@@ -318,16 +335,19 @@ form.addEventListener("submit", async (event) => {
 
         // rectangle animation
       // rectangle 1
-      gsap.timeline()
-      .set(".type-color-1", {opacity: 0})
-      .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
-      .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
+      // gsap.timeline()
+      // .set(".type-color-1", {opacity: 0})
+      // .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
+      // .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
 
       // rectangle 2
-      gsap.timeline()
-        .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
-        .to(".type-color-2", {scaleX: 1, duration: 0.2})
+      // gsap.timeline()
+      //   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
+      //   .to(".type-color-2", {scaleX: 1, duration: 0.2})
+      typeColorAnimation.restart();
         }
+
+      
 
       // change the flavor text
       pokemonFlavorText.textContent = flavorText;
