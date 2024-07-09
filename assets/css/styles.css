@@ -219,6 +219,7 @@ button[type="submit"]:hover {
   right: 32%; */
   transform: rotate(38deg);
   opacity: 0.5;
+  top: -15%;
 }
 
 /* ---------- Media queries ---------- */
@@ -229,6 +230,10 @@ button[type="submit"]:hover {
 
   .type-color-1 {
     bottom: -8%;
+  }
+
+  .type-color-2 {
+    top: -3%;
   }
 }
 
@@ -308,15 +313,15 @@ button[type="submit"]:hover {
     width: 2000px;
     /* top: -20%; */
     bottom: 67%;
-    left: 0;
+    left: 25%;
 
   }
 
   .type-color-2 {
-    bottom: 0;
-    right: 10%;
-    height: 1000px;
-    width: 3000px;
+    width: 136%;
+    height: 100%;
+    right: 60%;
+    top: 84%;
   }
 }
 
@@ -341,6 +346,8 @@ button[type="submit"]:hover {
   }
 }
 
+
+
 @media only screen and (min-width: 1700px) {
   .type-color-1 {
     width: 100%;
@@ -349,9 +356,9 @@ button[type="submit"]:hover {
   }
 
   .type-color-2 {
-    right: 32%;
+    right: 52%;
     width: 150%;
-    height: 75%;
+    height: 100%;
     bottom: -25%;
   }
 }
