@@ -202,10 +202,12 @@ button[type="submit"]:hover {
   width: 700px;
   height: 500px;
   position: fixed;
-  left: 32%;
-  top: -26%;
+  /* left: 32%;
+  top: -26%; */
   transform: rotate(38deg);
   opacity: 0.5;
+  right: 72%;
+  bottom: -24%;
 }
 
 .type-color-2 {
@@ -213,8 +215,8 @@ button[type="submit"]:hover {
   width: 700px;
   height: 500px;
   position: fixed;
-  bottom: -26%;
-  right: 32%;
+  /* bottom: -26%;
+  right: 32%; */
   transform: rotate(38deg);
   opacity: 0.5;
 }
@@ -223,6 +225,10 @@ button[type="submit"]:hover {
 @media only screen and (min-width: 576px) {
   .type-color-1, .type-color-2 {
     width: 1000px;
+  }
+
+  .type-color-1 {
+    bottom: -8%;
   }
 }
 
@@ -297,9 +303,13 @@ button[type="submit"]:hover {
   /* type color rectangles */
   .type-color-1 {
     background-color: #f04038;
-    top: 2%;
+    /* top: 2%; */
     opacity: 1;
     width: 2000px;
+    /* top: -20%; */
+    bottom: 67%;
+    left: 0;
+
   }
 
   .type-color-2 {
@@ -320,7 +330,8 @@ button[type="submit"]:hover {
   }
 
   .type-color-1 {
-    top: -8%;
+    /* top: -8%; */
+    left: 24%;
   }
 
   .type-color-2 {
@@ -333,7 +344,8 @@ button[type="submit"]:hover {
 @media only screen and (min-width: 1700px) {
   .type-color-1 {
     width: 100%;
-    top: -20%;
+    /* top: -20%; */
+    left: 42%;
   }
 
   .type-color-2 {
