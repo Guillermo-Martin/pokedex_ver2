@@ -324,7 +324,9 @@ button[type="submit"]:hover {
   }
 
   .type-color-2 {
-    right: 24%;
+    /* right: 24%; */
+    right: 60%;
+    bottom: -82%;
   }
 }
 

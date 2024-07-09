@@ -6,6 +6,8 @@ console.log(window.innerWidth);
 // gsap.set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"});
 // gsap.to(".type-color-1", {scaleX: 1, duration: 1})
 
+// gsap.to(".type-color-2", {scaleX: 0, duration: 1, transformOrigin: "100% 100%"})
+
 // ---------- Variables ----------
 let capitalName = "";
 let typeColors = {
@@ -130,9 +132,13 @@ form.addEventListener("submit", async (event) => {
       // rectangle animation
       // gsap.to(".type-color-1", {scaleX: 0, duration: 1});
       gsap.timeline()
-        .to(".type-color-1", {opacity: 0, duration: 0.1})
-        .to(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%", duration: 0.1})
-        .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.1});
+        .to(".type-color-1", {opacity: 0, duration: 0.2})
+        .to(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%", duration: 0.2})
+        .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
+
+      gsap.timeline()
+        .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
+        .to(".type-color-2", {scaleX: 1, duration: 0.2})
       
 
       // 5. create 2 divs to go into the pokemon display image container
