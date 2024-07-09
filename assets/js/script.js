@@ -3,7 +3,8 @@ var tl = gsap.timeline();
 
 console.log(window.innerWidth);
 
-
+// gsap.set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"});
+// gsap.to(".type-color-1", {scaleX: 1, duration: 1})
 
 // ---------- Variables ----------
 let capitalName = "";
@@ -126,6 +127,14 @@ form.addEventListener("submit", async (event) => {
       // 4. if pikachu is there, remove him
       pikachuWaving.remove();
 
+      // rectangle animation
+      // gsap.to(".type-color-1", {scaleX: 0, duration: 1});
+      gsap.timeline()
+        .to(".type-color-1", {opacity: 0, duration: 0.1})
+        .to(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%", duration: 0.1})
+        .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.1});
+      
+
       // 5. create 2 divs to go into the pokemon display image container
       let normPokemonDiv = document.createElement("div");
       let shinyPokemonDiv = document.createElement("div");
@@ -194,6 +203,8 @@ form.addEventListener("submit", async (event) => {
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
         typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[1].type.name];
+
+        // gsap.to(".type-color-1", {scaleX: 1, duration: 1});
       } else {
         // 1 type
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
