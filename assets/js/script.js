@@ -212,7 +212,7 @@ form.addEventListener("submit", async (event) => {
       let clickText = document.createElement("p");
 
       // 14b. give the element a class for styling and some text
-      clickText.setAttribute("class", "clickText");
+      clickText.setAttribute("class", "click-text");
       clickText.textContent = "(Click on the Pokémon to hear its cry!)";
 
       // 14c. append it to the pokemonDisplay container, before the Text container

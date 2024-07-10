@@ -98,6 +98,13 @@ h1 {
   text-align: center;
 }
 
+/* ----- Click text ----- */
+.click-text {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
 /* ----- type ----- */
 .pokemon-type {
   font-size: 24px;
