@@ -1,13 +1,6 @@
 console.log("connected!");
 var tl = gsap.timeline();
 
-console.log(window.innerWidth);
-
-// gsap.set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"});
-// gsap.to(".type-color-1", {scaleX: 1, duration: 1})
-
-// gsap.to(".type-color-2", {scaleX: 0, duration: 1, transformOrigin: "100% 100%"})
-
 // ---------- Variables ----------
 let capitalName = "";
 let typeColors = {
@@ -47,7 +40,7 @@ let pikachuWaving = document.getElementById("pikachu-waving");
 let audio = "";
 
 // ---------- Functions ----------
-// add the rest of letters 
+// Capitalize the pokemon's name to display
 let capitalize = (string) => {
   // 1. capitalize the first letter of the string
   capitalName = string[0].toUpperCase();
@@ -60,22 +53,14 @@ let capitalize = (string) => {
   return capitalName;
 }
 
-
-// ---------- animaiton
+// Colors animation for the pokemon type(s)
 let typeColorAnimation = tl
-  // .set(".type-color-1", {opacity: 0})
   .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"}, "<")
-  // .set(".type-color-1", {scaleX: 0, transformOrigin: "33% 132%"}, "<")
   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"}, "<")
   .to(".type-color-1", {scaleX: 1, opacity: 0.5, ease: "power4.out", duration: 1, delay: 0.3}, "<")
   .to(".type-color-2", {scaleX: 1, ease: "power4.out", duration: 1}, "<")
   .pause();
 
-// ---------- Check screen width for pikachu ----------
-// if(window.innerWidth >= 992) {
-//   pikachuWaving.setAttribute("src", "");
-//   pikachuWaving.setAttribute("alt", "");
-// }
 
 // ---------- Form functionality ----------
 // target the form
@@ -140,21 +125,9 @@ form.addEventListener("submit", async (event) => {
       // 4. if pikachu is there, remove him
       pikachuWaving.remove();
 
-      // rectangle animation
-      // rectangle 1
-      // gsap.timeline()
-      //   .set(".type-color-1", {opacity: 0})
-      //   .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
-      //   .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
-
-      // rectangle 2
-      // gsap.timeline()
-      //   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
-      //   .to(".type-color-2", {scaleX: 1, duration: 0.2})
-
+      // 4a. play the type color animation
       typeColorAnimation.play();
       
-
       // 5. create 2 divs to go into the pokemon display image container
       let normPokemonDiv = document.createElement("div");
       let shinyPokemonDiv = document.createElement("div");
@@ -204,7 +177,6 @@ form.addEventListener("submit", async (event) => {
       pokemonName.setAttribute("id", "pokemon-name");
 
       // 16. set the pokemon name
-      // pokemonName.textContent = `#${pokemonData.id} - ${pokemonData.name}`;
       pokemonName.textContent = `#${pokemonData.id} - ${capitalName}`;
 
       // 17. append the name to the container
@@ -223,35 +195,19 @@ form.addEventListener("submit", async (event) => {
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
         typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[1].type.name];
-
-        // gsap.to(".type-color-1", {scaleX: 1, duration: 1});
       } else {
         // 1 type
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
         textContainer.appendChild(pokemonType);
-
-        
 
         // change rectangle colors
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
         typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
 
-        // rectangle animation
-      // rectangle 1
-      // gsap.timeline()
-      // .set(".type-color-1", {opacity: 0})
-      // .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
-      // .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
-
-      // rectangle 2
-      // gsap.timeline()
-      //   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
-      //   .to(".type-color-2", {scaleX: 1, duration: 0.2})
-      typeColorAnimation.play();
+        // play the color animation
+        typeColorAnimation.play();
       }
-
-      
 
       // 19. set the flavor text (element created earlier)
       pokemonFlavorText.setAttribute("class", "flavor-text");
@@ -269,6 +225,7 @@ form.addEventListener("submit", async (event) => {
       // ---------- Pokemon jump animation and play sound ----------
       let spriteArr = document.querySelectorAll(".pokemon-sprite");
 
+      // add an click listener on the sprites
       for(let i = 0; i < spriteArr.length; i++) {
         spriteArr[i].addEventListener("click", () => {
           // https://stackoverflow.com/questions/9419263/how-to-play-audio
@@ -304,28 +261,13 @@ form.addEventListener("submit", async (event) => {
       if(pokemonData.types.length > 1) {
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name} and ${pokemonData.types[1].type.name}`;
         
-        // rectangle animation
-      // rectangle 1
-      // gsap.timeline()
-      //   .set(".type-color-1", {opacity: 0})
-      //   .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
-      //   .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
-
-      // rectangle 2
-      // gsap.timeline()
-      //   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
-      //   .to(".type-color-2", {scaleX: 1, duration: 0.2})
-
-      typeColorAnimation.restart();
-
-        // testing
-        // console.log(typeColors[pokemonData.types[0].type.name])
-        // console.log(typeColors[pokemonData.types[1].type.name])
-        
         // change rectangle colors
         typeColor1.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
         typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[1].type.name];
+
+        // restart the color animation
+        typeColorAnimation.restart();
       } else {
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
 
@@ -334,21 +276,9 @@ form.addEventListener("submit", async (event) => {
         typeColor1.style.opacity = 0.5;
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
 
-        // rectangle animation
-      // rectangle 1
-      // gsap.timeline()
-      // .set(".type-color-1", {opacity: 0})
-      // .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"})
-      // .to(".type-color-1", {scaleX: 1, opacity: 0.5, duration: 0.2});
-
-      // rectangle 2
-      // gsap.timeline()
-      //   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"})
-      //   .to(".type-color-2", {scaleX: 1, duration: 0.2})
-      typeColorAnimation.restart();
-        }
-
-      
+        // restart the color animation
+        typeColorAnimation.restart();
+      }
 
       // change the flavor text
       pokemonFlavorText.textContent = flavorText;
@@ -358,12 +288,8 @@ form.addEventListener("submit", async (event) => {
 
       for(let i = 0; i < spriteArr.length; i++) {
         spriteArr[i].addEventListener("click", () => {
-      
           // Fixing the play promise error:  https://developer.chrome.com/blog/play-request-was-interrupted
           let playPromise = audio.play();
-          
-          console.log(playPromise);
-          console.log(!playPromise);
 
           // if "playPromise" doesn't equal undefined...
           if(playPromise !== undefined) {
@@ -371,7 +297,7 @@ form.addEventListener("submit", async (event) => {
               // ...then pause any audio that is playing
               audio.pause();
 
-              // change the srce of the sound
+              // change the src of the sound
               audio.setAttribute("src", pokemonCry);
 
               // then play the audio
@@ -382,15 +308,7 @@ form.addEventListener("submit", async (event) => {
             });
           };
           
-          // audio.setAttribute("src", pokemonCry);
-          
-
-          // console.log(audio);
-
-          // let audioElem = document.get 
-
-          
-
+          // play the jumping animation and play sound
           gsap.timeline({repeat: 2})
             .to(spriteArr[i], {y: -10, duration: 0.1})
             .to(spriteArr[i], {y: 0, duration: 0.1});
@@ -401,47 +319,7 @@ form.addEventListener("submit", async (event) => {
     console.log(err);
 
     // change form label into an error message
-    
     searchLabel.setAttribute("class", "error");
     searchLabel.textContent = "We can't find that Pokémon.  Please try again."
   };
 });
-
-
-
-// ---------- GSAP Animation reference ----------
-
-// --------- ANIMATION -------------
-    // ----- move form and pikachu disappear animation -----
-    // console.log("Flavor text", flavorText);
-    // form timeline
-    // tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
-    //   .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
-    //   .to("#pikachu-waving", {opacity: 0, duration: 1}, "<")
-    //   .to("#pikachu-waving", {display: "none"});
-
-    // ----------------------------------
-
-// greensock animation example
-// // use a script tag or an external JS file
-// document.addEventListener("DOMContentLoaded", (event) => {
-//   // gsap code here!
-//   // alert("gsap loaded!");
-//   console.log("gsap loaded");
-//   // gsap.to("#hero-pikachu", {opacity: 0, duration: 1});
-
-//   // var tl = gsap.timeline();
-
-//   // pikachu timeline
-//   // tl.to("#hero-pikachu", {opacity: 0, duration: 1})
-//   //   .to("#hero-pikachu", {display: "none", duration: 0.5});
-
-//   // form timeline
-//   // tl.to(".hero-section", {y: -150, duration: 1, ease: "power4.out"})
-//   //   .to("#form", {y: 150, duration: 1, ease: "power4.out"}, "<")
-//   //   .to("#pokemon-image-1", {opacity: 0, duration: 1}, "<")
-// });
-
-
-// X get all the type colors
-// set type 1 to the type 1 color
