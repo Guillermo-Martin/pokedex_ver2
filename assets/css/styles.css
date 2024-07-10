@@ -201,7 +201,7 @@ button[type="submit"]:active {
   height: 500px;
   opacity: 0.5;
   position: fixed;
-  right: 107%;
+  right: 98%;
   transform: rotate(38deg);
   width: 700px;
 }
