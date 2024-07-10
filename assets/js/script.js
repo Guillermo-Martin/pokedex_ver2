@@ -107,6 +107,8 @@ form.addEventListener("submit", async (event) => {
     case "nidoran female":
       searchInput = "nidoran-f";
       break;
+    case "deoxys":
+      searchInput = "deoxys-normal";
     default:
       break;
   } 
