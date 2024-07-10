@@ -74,6 +74,40 @@ form.addEventListener("submit", async (event) => {
   // get input value (API direct link uses lowercase letters)
   let searchInput = document.getElementById("searchInput").value.toLowerCase();
 
+  // Check edge cases: pokemon with some punctuation in the name
+  switch(searchInput) {
+    case "mr. mime":
+    case "mr.mime":
+    case "mister mime":
+      searchInput = "mr-mime";
+      break
+    case "mime jr.":
+    case "mime junior":
+      searchInput = "mime-jr";
+      break;
+    case "porygon-2":
+    case "porygon 2":
+      searchInput = "porygon2";
+      break;
+    case "farfetch'd":
+      searchInput = "farfetchd";
+      break;
+    case "nidoran♂":
+    case "nidoran-male":
+    case "nidoran (male)":
+    case "nidoran male":
+      searchInput = "nidoran-m";
+      break;
+    case "nidoran♀":
+    case "nidoran-female":
+    case "nidoran (female)":
+    case "nidoran female":
+      searchInput = "nidoran-f";
+      break;
+    default:
+      break;
+  } 
+
   // ---------- API Request ----------
   try {
     // ----- Getting the data -----
