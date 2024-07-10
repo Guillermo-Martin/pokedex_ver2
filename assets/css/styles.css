@@ -7,13 +7,13 @@
 	--lg-desktop: 1400px; */
 
 body {
-  font-family: "Reem Kufi Fun", "Lato", "Roboto", sans-serif;
-  position: relative;
-  min-height: 100vh;
-  display: flex;
   align-items: center;
+  display: flex;
+  font-family: "Reem Kufi Fun", "Lato", "Roboto", sans-serif;
   justify-content: center;
   margin: 0;
+  min-height: 100vh;
+  position: relative;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -54,18 +54,18 @@ h1 {
 }
 
 .pokemon-display .image-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   margin-bottom: 20px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* ----- Pokemon sprite ----- */
 .sprite-container {
-  width: 50%;
   position: relative;
+  width: 50%;
 }
 
 .image-container img {
@@ -73,42 +73,42 @@ h1 {
 }
 
 .image-container .pokemon-sprite {
+  cursor: pointer;
   width: 100%;
   margin-bottom: 16px;
-  cursor: pointer;
 }
 
 /* ----- Normal vs. shiny text ----- */
 .sprite-container p {
-  text-align: center;
-  margin: 0;
-  position: absolute;
   bottom: 0;
   left: 50%;
+  margin: 0;
+  position: absolute;
+  text-align: center;
   transform: translateX(-50%);
 }
 
 /* ----- Name ----- */
 .pokemon-name {
-  text-align: center;
   font-size: 48px;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 20px;
   line-height: 1.2;
+  margin-bottom: 20px;
+  margin-top: 0;
+  text-align: center;
 }
 
 /* ----- type ----- */
 .pokemon-type {
-  text-align: center;
-  font-weight: 900;
   font-size: 24px;
+  font-weight: 900;
+  text-align: center;
 }
 
 /* ----- flavor text ----- */
 .flavor-text {
-  margin-top: 0;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .pokemon-display .text-container {
@@ -119,8 +119,8 @@ h1 {
 #form {
   display: flex;
   flex-direction: column;
-  width: 100%;
   margin: 0 auto;
+  width: 100%;
 }
 
 label[for="searchInput"] {
@@ -142,8 +142,8 @@ label.error {
   border: 2px solid #000;
   border-radius: 8px;
   height: 32px;
-  padding-left: 20px;
   margin-bottom: 20px;
+  padding-left: 20px;
 }
 
 #searchInput::placeholder {
@@ -152,17 +152,17 @@ label.error {
 
 /* ----- Button ----- */
 button[type="submit"] {
+  background-color: #f04038;
   border: 2px solid #000;
   border-radius: 20px;
-  background-color: #f04038;
   color: #fff;
-  height: 40px;
-  font-weight: 600;
-  max-width: 228px;
-  width: 75%;
-  margin: 0 auto;
   cursor: pointer;
+  font-weight: 600;
+  height: 40px;
+  margin: 0 auto;
+  max-width: 228px;
   transition: transform 0.2s;
+  width: 75%;
 }
 
 /* Hover effect */
@@ -177,31 +177,31 @@ button[type="submit"]:active {
 
 /* Search another prompt */
 .search-another {
-  text-align: left;
   font-size: 24px;
   font-weight: 600;
-  margin-top: 0;
   margin-bottom: 0;
+  margin-top: 0;
+  text-align: left;
 }
 
 /* ---------- Rectangles for type colors ---------- */
 .type-color-1 {
-  width: 700px;
-  height: 500px;
-  position: fixed;
-  transform: rotate(38deg);
-  opacity: 0.5;
-  right: 100%;
   bottom: -14%;
+  height: 500px;
+  opacity: 0.5;
+  position: fixed;
+  right: 100%;
+  transform: rotate(38deg);
+  width: 700px;
 }
 
 .type-color-2 {
-  width: 700px;
   height: 500px;
-  position: fixed;
-  transform: rotate(38deg);
   opacity: 0.5;
+  position: fixed;
   top: -15%;
+  transform: rotate(38deg);
+  width: 700px;
 }
 
 /* ---------- Media queries ---------- */
@@ -228,11 +228,11 @@ button[type="submit"]:active {
   }
 
   .main-content {
+    align-items: center;
     display: grid;
+    grid-column-gap: 64px;
     grid-template-columns: 1fr 1fr;
     max-width: 1100px;
-    align-items: center;
-    grid-column-gap: 64px;
   }
 
   .subheader {
@@ -242,8 +242,8 @@ button[type="submit"]:active {
   /* waving pikachu will stay and not be used for displaying results on larger screens*/
   .image-container-desktop {
     display: block;
-    width: 50%;
     margin: 0 auto;
+    width: 50%;
   }
 
   #pikachu-waving-desktop {
@@ -252,14 +252,14 @@ button[type="submit"]:active {
 
   /* ---------- pokemon display ---------- */
   #pokemon-display {
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    height: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
     flex-direction: column;
+    grid-column-start: 2;
+    grid-row-end: 3;
+    grid-row-start: 1;
+    height: 100%;
+    justify-content: center;
   }
 
   #pokemon-display .text-container {
@@ -273,24 +273,24 @@ button[type="submit"]:active {
 
   /* ---------- form ---------- */
   #form {
-    min-height: 156px;
     justify-content: end;
+    min-height: 156px;
   }
 
   /* ---------- Rectangles for type colors ---------- */
   .type-color-1 {
     background-color: #f04038;
-    opacity: 1;
-    width: 2000px;
     bottom: 120%;
+    opacity: 1;
     right: -38%;
+    width: 2000px;
   }
 
   .type-color-2 {
-    width: 136%;
     height: 100%;
     right: 60%;
     top: 84%;
+    width: 136%;
   }
 }
 
@@ -305,24 +305,23 @@ button[type="submit"]:active {
 
   /* ---------- Rectangles for type colors ---------- */
   .type-color-1 {
-    width: 136%;
     bottom: 103%;
     right: -28%;
+    width: 136%;
   }
 
   .type-color-2 {
-    right: 60%;
     bottom: -82%;
+    right: 60%;
   }
 }
-
 
 @media only screen and (min-width: 1700px) {
   /* ---------- Rectangles for type colors ---------- */
   .type-color-2 {
+    bottom: -25%;
+    height: 100%;
     right: 52%;
     width: 150%;
-    height: 100%;
-    bottom: -25%;
   }
 }
