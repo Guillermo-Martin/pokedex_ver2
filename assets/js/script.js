@@ -120,9 +120,6 @@ form.addEventListener("submit", async (event) => {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput}`);
     let pokemonData = await response.json();
 
-    // see data
-    console.log(pokemonData.cries.latest);
-
     // get additional data:  flavor text
     // using the retrieved data, make API request to get the flavor text, and parse data as JSON
     let speciesRes = await fetch(pokemonData.species.url);
@@ -210,6 +207,16 @@ form.addEventListener("submit", async (event) => {
       // 14. append the text container to the "pokemon display" container
       let pokemonDisplay = document.getElementById("pokemon-display");
       pokemonDisplay.appendChild(textContainer);
+
+      // 14a. create a p element to tell the user to click on the pokemon to hear its cry
+      let clickText = document.createElement("p");
+
+      // 14b. give the element a class for styling and some text
+      clickText.setAttribute("class", "clickText");
+      clickText.textContent = "(Click on the Pokémon to hear its cry!)";
+
+      // 14c. append it to the pokemonDisplay container, before the Text container
+      pokemonDisplay.insertBefore(clickText, textContainer);
 
       // 15. add a class for the h2 pokemon name (created earlier) for styling
       pokemonName.setAttribute("class", "pokemon-name");
