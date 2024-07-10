@@ -1,13 +1,3 @@
-/* <uniquifier>: Use a unique and descriptive class name
-<weight>: Use a value from 400 to 700 */
-
-/* .reem-kufi-fun-body {
-  font-family: "Reem Kufi Fun", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
-
 /* breakpoints */
 	/* --sm-mobile: 320px;
 	--lg-mobile: 576px;
@@ -18,27 +8,17 @@
 
 body {
   font-family: "Reem Kufi Fun", "Lato", "Roboto", sans-serif;
-  /* font-optical-sizing: auto; */
-  /* font-weight: <weight>;
-  font-style: normal; */
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  /* padding: 16px; */
   padding-left: 16px;
   padding-right: 16px;
-  /* overflow: hidden; */
 }
 
 .main-content {
-  /* border: 3px solid red; */
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   max-width: 400px;
   width: 100%;
   z-index: 1;
@@ -82,6 +62,7 @@ h1 {
   justify-content: center;
 }
 
+/* ----- Pokemon sprite ----- */
 .sprite-container {
   width: 50%;
   position: relative;
@@ -97,6 +78,7 @@ h1 {
   cursor: pointer;
 }
 
+/* ----- Normal vs. shiny text ----- */
 .sprite-container p {
   text-align: center;
   margin: 0;
@@ -106,7 +88,7 @@ h1 {
   transform: translateX(-50%);
 }
 
-/* name */
+/* ----- Name ----- */
 .pokemon-name {
   text-align: center;
   font-size: 48px;
@@ -116,15 +98,14 @@ h1 {
   line-height: 1.2;
 }
 
-/* type */
+/* ----- type ----- */
 .pokemon-type {
   text-align: center;
   font-weight: 900;
   font-size: 24px;
-  /* margin-bottom: 0; */
 }
 
-/* flavor text */
+/* ----- flavor text ----- */
 .flavor-text {
   margin-top: 0;
   margin-bottom: 0;
@@ -134,9 +115,8 @@ h1 {
   margin-bottom: 28px;
 }
 
-/* ----- Form ----- */
+/* ---------- Form ---------- */
 #form {
-  /* border: 3px solid blue; */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -144,11 +124,11 @@ h1 {
 }
 
 label[for="searchInput"] {
-  /* border: 3px solid red; */
   font-size: 12px;
   margin-bottom: 4px;
 }
 
+/* ----- Error ----- */
 label.error {
   color: red;
 }
@@ -157,6 +137,7 @@ label.error {
   font-family: "Reem Kufi Fun", "Lato", "Roboto", sans-serif;
 }
 
+/* ----- Input box ----- */
 #searchInput {
   border: 2px solid #000;
   border-radius: 8px;
@@ -169,6 +150,7 @@ label.error {
   color: #969696;
 }
 
+/* ----- Button ----- */
 button[type="submit"] {
   border: 2px solid #000;
   border-radius: 20px;
@@ -183,14 +165,17 @@ button[type="submit"] {
   transition: transform 0.2s;
 }
 
+/* Hover effect */
 button[type="submit"]:hover {
   transform: scale(1.04);
 }
 
+/* Click effect */
 button[type="submit"]:active {
   transform: scale(1.01);
 }
 
+/* Search another prompt */
 .search-another {
   text-align: left;
   font-size: 24px;
@@ -199,15 +184,11 @@ button[type="submit"]:active {
   margin-bottom: 0;
 }
 
-
 /* ---------- Rectangles for type colors ---------- */
 .type-color-1 {
-  /* background-color: yellow; */
   width: 700px;
   height: 500px;
   position: fixed;
-  /* left: 32%;
-  top: -26%; */
   transform: rotate(38deg);
   opacity: 0.5;
   right: 100%;
@@ -215,12 +196,9 @@ button[type="submit"]:active {
 }
 
 .type-color-2 {
-  /* background-color: blue; */
   width: 700px;
   height: 500px;
   position: fixed;
-  /* bottom: -26%;
-  right: 32%; */
   transform: rotate(38deg);
   opacity: 0.5;
   top: -15%;
@@ -228,12 +206,12 @@ button[type="submit"]:active {
 
 /* ---------- Media queries ---------- */
 @media only screen and (min-width: 576px) {
+  /* ---------- Rectangles for type colors ---------- */
   .type-color-1, .type-color-2 {
     width: 1000px;
   }
 
   .type-color-1 {
-    /* bottom: -8%; */
     bottom: -2%;
     right: 81%;
   }
@@ -261,22 +239,10 @@ button[type="submit"]:active {
     margin-bottom: 20px;
   }
 
-  /* h1 {
-    text-align: left;
-  }
-
-  .subheader {
-    text-align: left;
-  } */
-
-  /* waving pikachu will stay and not be used for displaying results */
+  /* waving pikachu will stay and not be used for displaying results on larger screens*/
   .image-container-desktop {
     display: block;
     width: 50%;
-    /* border: 3px solid red; */
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     margin: 0 auto;
   }
 
@@ -284,7 +250,7 @@ button[type="submit"]:active {
     width: 100%;
   }
 
-  /* pokemon display */
+  /* ---------- pokemon display ---------- */
   #pokemon-display {
     grid-row-start: 1;
     grid-row-end: 3;
@@ -300,27 +266,24 @@ button[type="submit"]:active {
     margin-bottom: 0;
   }
 
-  /* pikachu waving (for mobile versions) */
+  /* hide pikachu waving (for mobile versions) */
   #pikachu-waving {
     display: none;
   }
 
-  /* form */
+  /* ---------- form ---------- */
   #form {
     min-height: 156px;
     justify-content: end;
   }
 
-  /* type color rectangles */
+  /* ---------- Rectangles for type colors ---------- */
   .type-color-1 {
     background-color: #f04038;
-    /* top: 2%; */
     opacity: 1;
     width: 2000px;
-    /* top: -20%; */
     bottom: 120%;
     right: -38%;
-
   }
 
   .type-color-2 {
@@ -340,35 +303,22 @@ button[type="submit"]:active {
     grid-column-gap: 88px;
   }
 
+  /* ---------- Rectangles for type colors ---------- */
   .type-color-1 {
-    /* top: -8%; */
-    /* left: 24%; */
-    /* bottom: 89%;
-    left: 10%; */
-    /* width: 3000px;
-    right: -75%;
-    bottom: 100%; */
     width: 136%;
     bottom: 103%;
     right: -28%;
   }
 
   .type-color-2 {
-    /* right: 24%; */
     right: 60%;
     bottom: -82%;
   }
 }
 
 
-
 @media only screen and (min-width: 1700px) {
-  .type-color-1 {
-    /* width: 100%; */
-    /* top: -20%; */
-    /* left: 42%; */
-  }
-
+  /* ---------- Rectangles for type colors ---------- */
   .type-color-2 {
     right: 52%;
     width: 150%;

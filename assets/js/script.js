@@ -1,4 +1,4 @@
-console.log("connected!");
+// greensock timeline
 var tl = gsap.timeline();
 
 // ---------- Variables ----------
