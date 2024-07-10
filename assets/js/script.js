@@ -211,9 +211,21 @@ form.addEventListener("submit", async (event) => {
       // 14a. create a p element to tell the user to click on the pokemon to hear its cry
       let clickText = document.createElement("p");
 
+      // 14a-1. create two spans: one for mobile text, one for desktop text
+      let mobileText = document.createElement("span");
+      let deskText = document.createElement("span");
+
+      // 14a-2. give the spans text
+      mobileText.textContent = "(Tap on the Pokémon!)";
+      deskText.textContent = "(Click on the Pokémon to hear its cry!)";
+
+      // 14a-3. append the spans to the clickText element
+      clickText.appendChild(mobileText);
+      clickText.appendChild(deskText);
+
       // 14b. give the element a class for styling and some text
       clickText.setAttribute("class", "click-text");
-      clickText.textContent = "(Click on the Pokémon to hear its cry!)";
+      // clickText.textContent = "(Click on the Pokémon to hear its cry!)";
 
       // 14c. append it to the pokemonDisplay container, before the Text container
       pokemonDisplay.insertBefore(clickText, textContainer);
