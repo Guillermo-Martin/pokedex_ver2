@@ -75,13 +75,16 @@ form.addEventListener("submit", async (event) => {
   let searchInput = document.getElementById("searchInput").value.toLowerCase();
 
   // Check edge cases: pokemon with some punctuation in the name
+  // Using an "or" statement in a switch statement: https://stackoverflow.com/questions/6476994/using-or-operator-in-javascript-switch-statement
   switch(searchInput) {
     case "mr. mime":
     case "mr.mime":
+    case "mr mime":
     case "mister mime":
       searchInput = "mr-mime";
       break
     case "mime jr.":
+    case "mime jr":
     case "mime junior":
       searchInput = "mime-jr";
       break;
