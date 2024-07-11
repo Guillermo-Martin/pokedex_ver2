@@ -219,11 +219,7 @@ form.addEventListener("submit", async (event) => {
       mobileText.textContent = "(Tap on the Pokémon!)";
       deskText.textContent = "(Click on the Pokémon to hear its cry!)";
 
-      // 14a-3. give the spans a class for showing/hiding
-      mobileText.setAttribute("class", "mobile-text");
-      deskText.setAttribute("class", "desk-text");
-
-      // 14a-4. append the spans to the clickText element
+      // 14a-3. append the spans to the clickText element
       clickText.appendChild(mobileText);
       clickText.appendChild(deskText);
 

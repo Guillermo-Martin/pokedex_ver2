@@ -106,10 +106,6 @@ h1 {
   text-align: center;
 }
 
-.desk-text {
-  display: none;
-}
-
 /* ----- type ----- */
 .pokemon-type {
   font-size: 24px;
@@ -316,15 +312,6 @@ button[type="submit"]:active {
 
   .main-content {
     grid-column-gap: 88px;
-  }
-
-  /* Hide mobile text, show desktop text for the click text */
-  .mobile-text {
-    display: none;
-  }
-
-  .desk-text {
-    display: block;
   }
 
   /* ---------- Rectangles for type colors ---------- */
