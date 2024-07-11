@@ -368,12 +368,14 @@ button[type="submit"]:active {
   .type-color-1 {
     /* bottom: 103%; */
     /* right: -28%; */
-    width: 136%;
+    /* width: 136%; */
+    left: 80%;
   }
 
   .type-color-2 {
     /* bottom: -82%; */
     /* right: 60%; */
+    right: 15%;
   }
 }
 
