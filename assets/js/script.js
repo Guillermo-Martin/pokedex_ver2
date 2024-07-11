@@ -54,12 +54,18 @@ let capitalize = (string) => {
 }
 
 // Colors animation for the pokemon type(s)
+// let typeColorAnimation = tl
+//   .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"}, "<")
+//   .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"}, "<")
+//   .to(".type-color-1", {scaleX: 1, opacity: 0.5, ease: "power4.out", duration: 1, delay: 0.3}, "<")
+//   .to(".type-color-2", {scaleX: 1, ease: "power4.out", duration: 1}, "<")
+//   .pause();
+
 let typeColorAnimation = tl
-  .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"}, "<")
-  .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"}, "<")
+  // .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"}, "<")
+  // .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"}, "<")
   .to(".type-color-1", {scaleX: 1, opacity: 0.5, ease: "power4.out", duration: 1, delay: 0.3}, "<")
-  .to(".type-color-2", {scaleX: 1, ease: "power4.out", duration: 1}, "<")
-  .pause();
+  // .to(".type-color-2", {scaleX: 1, ease: "power4.out", duration: 1}, "<");
 
 
 // ---------- Form functionality ----------
@@ -162,7 +168,7 @@ form.addEventListener("submit", async (event) => {
       pikachuWaving.remove();
 
       // 4a. play the type color animation
-      typeColorAnimation.play();
+      // typeColorAnimation.play();
       
       // 5. create 2 divs to go into the pokemon display image container
       let normPokemonDiv = document.createElement("div");
@@ -264,7 +270,7 @@ form.addEventListener("submit", async (event) => {
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
 
         // play the color animation
-        typeColorAnimation.play();
+        // typeColorAnimation.play();
       }
 
       // 19. set the flavor text (element created earlier)
@@ -325,7 +331,7 @@ form.addEventListener("submit", async (event) => {
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[1].type.name];
 
         // restart the color animation
-        typeColorAnimation.restart();
+        // typeColorAnimation.restart();
       } else {
         pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
 
@@ -335,7 +341,7 @@ form.addEventListener("submit", async (event) => {
         typeColor2.style.backgroundColor = typeColors[pokemonData.types[0].type.name];
 
         // restart the color animation
-        typeColorAnimation.restart();
+        // typeColorAnimation.restart();
       }
 
       // change the flavor text
