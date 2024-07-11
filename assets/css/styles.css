@@ -217,29 +217,37 @@ button[type="submit"]:active {
   bottom: 100%;
 }
 
-.type-color-1::after {
+.type-color-1::after, .type-color-2::after {
   position: absolute;
   top: 100%;
   left: 0;
   width: 10px;
   height: 10px;
   content: '';
-  background-color: red;
+  background-color: black;
   border-radius: 50%;
   /* transform: translate(-50%, -50%); */
   transform: translate(0, 0);
 }
 
 .type-color-2 {
-  display: none;
+  /* display: none; */
   height: 500px;
   /* opacity: 0.5; */
   position: fixed;
   /* top: -15%; */
   /* transform: rotate(38deg); */
-  width: 700px;
+  /* width: 700px; */
+  /* width: calc(100vh * 2); */
+  width: 300px;
   background: red;
-  bottom: 0;
+  /* bottom: 0;
+  left: 10%; */
+  transform-origin: top right;
+  /* transform: scaleX(0); */
+  /* transform: rotate(38deg); */
+  top: 100%;
+  right: 40%;
 }
 
 /* ---------- Media queries ---------- */
