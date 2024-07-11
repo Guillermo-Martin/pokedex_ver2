@@ -206,7 +206,7 @@ button[type="submit"]:active {
   /* width: 700px; */
   /* width: 100%; */
   width: calc(100vh * 2);
-  background: blue;
+  /* background: blue; */
   /* top: 10%; */
   /* transform: scaleX(0); */
   /* margin-left: 60%; */
@@ -217,7 +217,7 @@ button[type="submit"]:active {
   bottom: 100%;
 }
 
-.type-color-1::after, .type-color-2::after {
+/* .type-color-1::after, .type-color-2::after {
   position: absolute;
   top: 100%;
   left: 0;
@@ -226,9 +226,9 @@ button[type="submit"]:active {
   content: '';
   background-color: black;
   border-radius: 50%;
-  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
   transform: translate(0, 0);
-}
+} */
 
 .type-color-2 {
   /* display: none; */
@@ -239,8 +239,8 @@ button[type="submit"]:active {
   /* transform: rotate(38deg); */
   /* width: 700px; */
   /* width: calc(100vh * 2); */
-  width: 300px;
-  background: red;
+  width: calc(100vh *2);
+  /* background: red; */
   /* bottom: 0;
   left: 10%; */
   transform-origin: top right;
