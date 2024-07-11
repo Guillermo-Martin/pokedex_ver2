@@ -12,8 +12,8 @@ body {
   font-family: "Reem Kufi Fun", "Lato", "Roboto", sans-serif;
   justify-content: center;
   margin: 0;
-  /* min-height: 100vh; */
-  min-height: 100lvh;
+  min-height: 100vh;
+  /* min-height: 100lvh; */
   position: relative;
   padding-left: 16px;
   padding-right: 16px;
@@ -198,21 +198,23 @@ button[type="submit"]:active {
 
 /* ---------- Rectangles for type colors ---------- */
 .type-color-1 {
-  bottom: -13%;
+  /* bottom: -13%; */
   height: 500px;
   opacity: 0.5;
   position: fixed;
-  right: 98%;
+  /* right: 98%; */
+  right: 350px;
+  top: 565px;
   transform: rotate(38deg);
-  width: 700px;
+  width: 1000px;
 }
 
 .type-color-2 {
-  /* bottom: 650px; */
+  bottom: 650px;
   height: 500px;
   opacity: 0.5;
   position: fixed;
-  top: -15%;
+  /* top: -15%; */
   transform: rotate(38deg);
   width: 700px;
 }
