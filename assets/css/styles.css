@@ -275,7 +275,6 @@ button[type="submit"]:active {
   /* ---------- Rectangles for type colors ---------- */
   .type-color-1 {
     background-color: #f04038;
-    /* left: 65%; */
     bottom: 112%;
     opacity: 1;
     transform: rotate(38deg);
@@ -308,6 +307,7 @@ button[type="submit"]:active {
 
   /* ---------- Rectangles for type colors ---------- */
   .type-color-1 {
+    bottom: 100%;
     left: 80%;
   }
 
