@@ -1,10 +1,10 @@
 /* breakpoints */
-	/* --sm-mobile: 320px;
-	--lg-mobile: 576px;
-	--sm-tablet: 767px;
-	--lg-tablet: 992px;
-	--sm-desktop: 1200px;
-	--lg-desktop: 1400px; */
+/* --sm-mobile: 320px;
+--lg-mobile: 576px;
+--sm-tablet: 767px;
+--lg-tablet: 992px;
+--sm-desktop: 1200px;
+--lg-desktop: 1400px; */
 
 body {
   align-items: center;
@@ -13,7 +13,6 @@ body {
   justify-content: center;
   margin: 0;
   min-height: 100vh;
-  /* min-height: 100lvh; */
   position: relative;
   padding-left: 16px;
   padding-right: 16px;
@@ -106,6 +105,10 @@ h1 {
   text-align: center;
 }
 
+.desk-text {
+  display: none;
+}
+
 /* ----- type ----- */
 .pokemon-type {
   font-size: 24px;
@@ -194,23 +197,20 @@ button[type="submit"]:active {
 
 /* ---------- Rectangles for type colors ---------- */
 .type-color-1 {
-  /* bottom: -13%; */
+  bottom: -13%;
   height: 500px;
   opacity: 0.5;
   position: fixed;
-  /* right: 98%; */
-  right: 350px;
-  top: 565px;
+  right: 98%;
   transform: rotate(38deg);
-  width: 1000px;
+  width: 700px;
 }
 
 .type-color-2 {
-  bottom: 650px;
   height: 500px;
   opacity: 0.5;
   position: fixed;
-  /* top: -15%; */
+  top: -15%;
   transform: rotate(38deg);
   width: 700px;
 }
@@ -228,7 +228,7 @@ button[type="submit"]:active {
   }
 
   .type-color-2 {
-    /* top: -3%; */
+    top: -3%;
   }
 }
 
@@ -312,6 +312,15 @@ button[type="submit"]:active {
 
   .main-content {
     grid-column-gap: 88px;
+  }
+
+  /* Hide mobile text, show desktop text for the click text */
+  .mobile-text {
+    display: none;
+  }
+
+  .desk-text {
+    display: block;
   }
 
   /* ---------- Rectangles for type colors ---------- */
