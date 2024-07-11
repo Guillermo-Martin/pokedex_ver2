@@ -204,12 +204,17 @@ button[type="submit"]:active {
   /* right: 98%; */
   /* transform: rotate(38deg); */
   /* width: 700px; */
-  width: 100%;
+  /* width: 100%; */
+  width: calc(100vh * 2);
   background: blue;
-  top: 0;
-  transform: scaleX(0);
+  /* top: 10%; */
+  /* transform: scaleX(0); */
   /* margin-left: 60%; */
-  transform-origin: 0 100%;
+  /* transform-origin: 0% 100%; */
+  /* transform: rotate(38deg) scaleX(0); */
+  transform-origin: top left;
+  left: 65%;
+  bottom: 100%;
 }
 
 .type-color-1::after {
@@ -221,7 +226,8 @@ button[type="submit"]:active {
   content: '';
   background-color: red;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
+  transform: translate(0, 0);
 }
 
 .type-color-2 {
