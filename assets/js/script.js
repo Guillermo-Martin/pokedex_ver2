@@ -55,8 +55,8 @@ let capitalize = (string) => {
 
 // Colors animation for the pokemon type(s)
 let typeColorAnimation = tl
-  .set(".type-color-1", {scaleX: 0, transformOrigin: "43% 132%"}, "<")
-  .set(".type-color-2", {scaleX: 0, transformOrigin: "100% 100%"}, "<")
+  .set(".type-color-1", {transform: "rotate(38deg)", scaleX: 0}, "<")
+  .set(".type-color-2", {transform: "rotate(38deg)", scaleX: 0}, "<")
   .to(".type-color-1", {scaleX: 1, opacity: 0.5, ease: "power4.out", duration: 1, delay: 0.3}, "<")
   .to(".type-color-2", {scaleX: 1, ease: "power4.out", duration: 1}, "<")
   .pause();

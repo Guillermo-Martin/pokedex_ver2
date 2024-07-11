@@ -197,41 +197,25 @@ button[type="submit"]:active {
 
 /* ---------- Rectangles for type colors ---------- */
 .type-color-1 {
-  bottom: -13%;
+  bottom: 100%;
   height: 500px;
-  opacity: 0.5;
+  left: 65%;
   position: fixed;
-  right: 98%;
-  transform: rotate(38deg);
-  width: 700px;
+  transform-origin: top left;
+  width: calc(100vh * 2);
 }
 
 .type-color-2 {
   height: 500px;
   opacity: 0.5;
   position: fixed;
-  top: -15%;
-  transform: rotate(38deg);
-  width: 700px;
+  right: 40%;
+  top: 100%;
+  transform-origin: top right;
+  width: calc(100vh *2);
 }
 
 /* ---------- Media queries ---------- */
-@media only screen and (min-width: 576px) {
-  /* ---------- Rectangles for type colors ---------- */
-  .type-color-1, .type-color-2 {
-    width: 1000px;
-  }
-
-  .type-color-1 {
-    bottom: -2%;
-    right: 81%;
-  }
-
-  .type-color-2 {
-    top: -3%;
-  }
-}
-
 @media only screen and (min-width: 992px) {
   body {
     padding-left: 32px;
@@ -291,17 +275,15 @@ button[type="submit"]:active {
   /* ---------- Rectangles for type colors ---------- */
   .type-color-1 {
     background-color: #f04038;
-    bottom: 120%;
+    bottom: 112%;
     opacity: 1;
-    right: -38%;
-    width: 2000px;
+    transform: rotate(38deg);
   }
 
   .type-color-2 {
-    height: 100%;
-    right: 60%;
-    top: 84%;
-    width: 136%;
+    height: 68vw;
+    right: 0;
+    
   }
 }
 
@@ -325,23 +307,24 @@ button[type="submit"]:active {
 
   /* ---------- Rectangles for type colors ---------- */
   .type-color-1 {
-    bottom: 103%;
-    right: -28%;
-    width: 136%;
+    bottom: 100%;
+    left: 80%;
   }
 
   .type-color-2 {
-    bottom: -82%;
-    right: 60%;
+    right: 15%;
   }
 }
 
 @media only screen and (min-width: 1700px) {
   /* ---------- Rectangles for type colors ---------- */
-  .type-color-2 {
-    bottom: -25%;
+  .type-color-1 {
     height: 100%;
-    right: 52%;
-    width: 150%;
+    left: 80%;
+  }
+
+  .type-color-2 {
+    height: 100%;
+    right: 28%;
   }
 }
