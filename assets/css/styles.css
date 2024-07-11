@@ -207,6 +207,7 @@ button[type="submit"]:active {
 
 .type-color-2 {
   height: 500px;
+  opacity: 0.5;
   position: fixed;
   right: 40%;
   top: 100%;
