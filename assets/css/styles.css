@@ -215,14 +215,6 @@ button[type="submit"]:active {
 }
 
 /* ---------- Media queries ---------- */
-@media only screen and (min-width: 576px) {
-  /* ---------- Rectangles for type colors ---------- */
-  .type-color-1 {
-    left: 10%;
-    transform: rotate(38deg);
-  }
-}
-
 @media only screen and (min-width: 992px) {
   body {
     padding-left: 32px;
