@@ -83,6 +83,12 @@ form.addEventListener("submit", async (event) => {
     case "mister mime":
       searchInput = "mr-mime";
       break
+    case "mr. rime":
+    case "mr.rime":
+    case "mr rime":
+    case "mister rime":
+      searchInput = "mr-rime";
+      break
     case "mime jr.":
     case "mime jr":
     case "mime junior":
